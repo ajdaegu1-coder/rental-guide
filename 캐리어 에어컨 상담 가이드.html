@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>캐리어 에어컨 상담 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cr-main:#0093A8;--cr-dark:#005F6E;--cr-hdr:#004A58;
+  --bg:#F5F5F5;--card:#FFF;--border:#E0E0E0;--text:#1A1A1A;--muted:#757575;
+  --warn:#E65100;--hi:#FFF3E0;
+  --ok-bg:#E8F5E9;--ok:#2E7D32;
+  --info-bg:#E3F2FD;--info:#1565C0;
+  --purple:#6A1B9A;--purple-bg:#F3E5F5;
+  --teal:#00695C;--teal-bg:#E0F2F1;
+  --red-bg:#FCE8E6;--red:#B71C1C;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Noto Sans KR",sans-serif;background:var(--bg);color:var(--text);font-size:14px;}
+
+/* HEADER */
+.hdr{background:var(--cr-hdr);color:white;padding:0;}
+.hdr-inner{max-width:1120px;margin:0 auto;padding:22px 20px 0;}
+.hdr-top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.logo{background:var(--cr-main);color:white;font-size:17px;font-weight:900;padding:10px 18px;border-radius:24px;flex-shrink:0;letter-spacing:1px;}
+.ht h1{font-size:21px;font-weight:900;}
+.ht p{font-size:11px;color:rgba(255,255,255,.5);margin-top:3px;}
+.hdr-link{background:var(--cr-main);color:white;text-decoration:none;padding:7px 15px;border-radius:20px;font-size:12px;font-weight:600;white-space:nowrap;}
+.tabs{display:flex;margin-top:20px;overflow-x:auto;gap:0;}
+.tab{padding:11px 17px;font-size:13px;font-weight:600;color:rgba(255,255,255,.5);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s;border-radius:8px 8px 0 0;background:transparent;border:none;font-family:inherit;}
+.tab:hover{color:rgba(255,255,255,.85);background:rgba(255,255,255,.05);}
+.tab.active{color:white;border-bottom:3px solid var(--cr-main);background:rgba(255,255,255,.08);}
+.content{max-width:1120px;margin:0 auto;padding:22px 20px 48px;}
+.tab-panel{display:none;}.tab-panel.active{display:block;}
+.card{background:var(--card);border-radius:12px;padding:20px;margin-bottom:16px;border:1px solid var(--border);box-shadow:0 1px 8px rgba(0,0,0,.05);}
+.ch{display:flex;align-items:center;gap:9px;margin-bottom:14px;padding-bottom:11px;border-bottom:2px solid var(--cr-main);}
+.ch h2{font-size:15px;font-weight:800;}
+.ci{width:30px;height:30px;background:var(--cr-main);color:white;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.sl{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--muted);margin-bottom:9px;margin-top:16px;text-transform:uppercase;}
+.sl:first-child{margin-top:0;}
+.wb{background:var(--hi);border-left:4px solid var(--warn);border-radius:0 8px 8px 0;padding:11px 14px;font-size:12.5px;line-height:1.7;margin-top:10px;}
+.wb strong{color:var(--warn);}
+.ib{background:var(--info-bg);border-left:4px solid var(--info);border-radius:0 8px 8px 0;padding:11px 14px;font-size:12.5px;line-height:1.7;margin-top:10px;}
+.ib strong{color:var(--info);}
+.ob{background:var(--ok-bg);border-left:4px solid var(--ok);border-radius:0 8px 8px 0;padding:11px 14px;font-size:12.5px;line-height:1.7;margin-top:10px;}
+.ob strong{color:var(--ok);}
+.rb{background:#E0F7FA;border-left:4px solid var(--cr-main);border-radius:0 8px 8px 0;padding:11px 14px;font-size:12.5px;line-height:1.7;margin-top:10px;}
+.rb strong{color:var(--cr-main);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:13px;}
+.ii{background:var(--bg);border-radius:9px;padding:14px;border-left:4px solid var(--info);}
+.ii h4{font-size:13px;font-weight:700;color:var(--info);margin-bottom:6px;}
+.ii p,.ii li{font-size:12.5px;color:#333;line-height:1.65;}
+.ii ul{padding-left:14px;}
+.fn{font-size:11px;color:var(--muted);line-height:1.7;margin-top:9px;padding-top:9px;border-top:1px solid var(--border);}
+.fn li{margin-left:14px;margin-bottom:2px;}
+
+/* SPEC TABLE */
+.spec-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.spec-tbl{border-collapse:separate;border-spacing:0;font-size:11.5px;border:1px solid var(--border);border-radius:10px;overflow:hidden;min-width:920px;width:100%;table-layout:fixed;}
+.spec-tbl col.cat{width:78px;}
+.spec-tbl col.feat{width:130px;}
+.spec-tbl col.model{width:auto;}
+.spec-tbl thead th{background:var(--cr-hdr);color:white;padding:10px 7px;text-align:center;font-weight:700;font-size:11.5px;border-right:1px solid rgba(255,255,255,.12);vertical-align:middle;}
+.spec-tbl thead th:last-child{border-right:none;}
+.spec-tbl thead th.hl{background:var(--cr-main);}
+.spec-tbl thead th small{font-weight:400;font-size:10px;display:block;margin-top:3px;opacity:.85;}
+.spec-tbl td{padding:8px 7px;border-bottom:1px solid #EEEEEE;border-right:1px solid #EEEEEE;text-align:center;vertical-align:middle;line-height:1.45;font-size:11.5px;}
+.spec-tbl td:last-child{border-right:none;}
+.spec-tbl tr:last-child td{border-bottom:none;}
+.spec-tbl .cat-cell{background:#F5F5F5;font-weight:800;font-size:11.5px;color:var(--cr-dark);text-align:center;vertical-align:middle;padding:6px 6px;border-right:1px solid #DDDDDD;}
+.spec-tbl .feat-cell{text-align:left;padding-left:9px;font-weight:600;color:#333;background:#FAFAFA;border-right:1px solid #EEEEEE;}
+.spec-tbl tr:nth-child(even) td{background:#FAFAFA;}
+.spec-tbl tr:nth-child(even) .cat-cell{background:#EFEFEF;}
+.spec-tbl tr:nth-child(even) .feat-cell{background:#F4F4F4;}
+.spec-tbl td.hl-col{background:#E0F7FA !important;border-left:2px solid var(--cr-main);}
+.spec-tbl tr:nth-child(even) td.hl-col{background:#B2EBF2 !important;}
+.ok{color:#2E7D32;font-size:14px;font-weight:900;}
+.ng{color:#BDBDBD;font-size:13px;}
+.bdg{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:11px;margin:1px 1px;white-space:nowrap;line-height:1.4;}
+.bdg-red{background:#FCE8E6;color:#B71C1C;}
+.bdg-blue{background:#E3F2FD;color:#0D3D7A;}
+.bdg-green{background:#E8F5E9;color:#1B5E20;}
+.bdg-amber{background:#FFF3E0;color:#BF360C;}
+.bdg-teal{background:#E0F2F1;color:#004D40;}
+.bdg-purple{background:#EDE7F6;color:#4527A0;}
+.bdg-gray{background:#EEEEEE;color:#555;}
+.bdg-navy{background:var(--cr-main);color:white;}
+.note-sm{font-size:10px;color:#999;display:block;margin-top:2px;}
+
+/* AI GRID */
+.ai-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px;}
+.ai-card{background:white;border:1px solid var(--border);border-radius:10px;padding:13px 14px;border-top:3px solid var(--cr-main);}
+.ai-card .ai-tt{font-size:13px;font-weight:800;margin-bottom:5px;}
+.ai-card .ai-ds{font-size:11.5px;color:#444;line-height:1.6;margin-bottom:7px;}
+.ai-card .ai-sp{font-size:10.5px;color:#777;}
+
+/* REC GRID */
+.rec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:14px;}
+.rec-card{background:white;border:1px solid var(--border);border-radius:11px;padding:15px 16px;}
+.rec-card.hl{border:2px solid var(--cr-main);background:#FFF5F5;}
+.rec-card .rec-tg{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;}
+.rec-card h3{font-size:14px;font-weight:800;margin-bottom:6px;}
+.rec-card p{font-size:11.5px;color:#555;line-height:1.65;}
+
+/* PIPE */
+.pipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pipe-card{border-radius:11px;padding:16px;border:2px solid;}
+.pc-gen{border-color:#78909C;background:#FAFBFC;}
+.pc-emb{border-color:#37474F;background:#F0F4F7;}
+.pipe-card h4{font-size:13px;font-weight:800;margin-bottom:9px;}
+.pc-gen h4{color:#455A64;}.pc-emb h4{color:#1C313A;}
+.pipe-tag{display:inline-block;padding:3px 9px;border-radius:11px;font-size:11px;font-weight:700;margin-bottom:8px;}
+.pt-g{background:#ECEFF1;color:#455A64;}.pt-e{background:#E8EAF6;color:#283593;}
+.pipe-card ul{padding-left:14px;font-size:12px;line-height:1.75;margin-top:8px;}
+.pipe-diff{background:white;border:1px solid var(--border);border-radius:9px;overflow:hidden;margin-top:14px;}
+.pd-row{display:flex;align-items:center;padding:7px 13px;border-bottom:1px solid #EEEEEE;font-size:12.5px;}
+.pd-row:last-child{border-bottom:none;}
+.pd-row:first-child{background:#F5F5F5;font-weight:700;font-size:12px;color:var(--muted);}
+.pd-label{min-width:80px;font-weight:700;color:var(--muted);}
+.pd-gen{flex:1;text-align:center;}
+.pd-emb{flex:1;text-align:center;}
+
+/* COST TABLE */
+.cost-tbl{width:100%;border-collapse:collapse;font-size:12.5px;}
+.cost-tbl th{background:var(--cr-dark);color:white;padding:9px 10px;text-align:left;font-weight:700;}
+.cost-tbl td{padding:8px 10px;border-bottom:1px solid #EEEEEE;vertical-align:top;line-height:1.55;}
+.cost-tbl tr:nth-child(even) td{background:#FAFAFA;}
+.cost-tbl .price{font-weight:800;color:var(--cr-main);white-space:nowrap;}
+.cost-tbl .note{font-size:11px;color:#999;display:block;margin-top:2px;}
+
+/* QA */
+.qa{margin-bottom:20px;}
+.qq{font-size:13.5px;font-weight:800;color:var(--cr-main);margin-bottom:7px;display:flex;gap:7px;align-items:flex-start;}
+.qq::before{content:"Q";background:var(--cr-main);color:white;font-size:10.5px;font-weight:800;width:19px;height:19px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+
+/* 섹션 구분 타이틀 */
+.section-divider{display:flex;align-items:center;gap:10px;margin:24px 0 12px;}
+.section-divider span{font-size:13px;font-weight:900;letter-spacing:.5px;color:var(--cr-dark);white-space:nowrap;}
+.section-divider::after{content:"";flex:1;height:2px;background:linear-gradient(to right,var(--cr-main),transparent);}
+
+
+/* INSTALL UX BLOCKS */
+.install-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:12px;}
+.install-card{background:#fff;border:1px solid var(--border);border-radius:11px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.04);}
+.install-card-head{background:var(--cr-dark);color:white;font-size:13px;font-weight:800;padding:9px 13px;}
+.install-card-body{padding:12px 13px;}
+.install-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#FAFAFA;border-radius:7px;padding:8px 10px;margin-bottom:6px;font-size:12.5px;line-height:1.5;}
+.install-row:last-child{margin-bottom:0;}
+.install-label{color:var(--muted);font-weight:700;}
+.install-value{color:var(--cr-main);font-weight:900;text-align:right;}
+.install-bullets{font-size:12.5px;line-height:1.8;padding-left:17px;margin-top:8px;color:#333;}
+.install-bullets li{margin-bottom:2px;}
+.sb{background:#F1F8E9;border:1.5px dashed #558B2F;border-radius:10px;padding:12px 15px;margin-top:11px;font-size:13px;line-height:1.75;color:#2E4A12;}
+.sl2{font-size:11px;font-weight:700;color:#558B2F;letter-spacing:1px;margin-bottom:5px;}
+.cost-link-big{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:13px 18px;border-radius:14px;background:var(--cr-main);color:white !important;text-decoration:none;font-size:24px;font-weight:900;line-height:1.25;box-shadow:0 3px 10px rgba(0,147,168,.25);}
+.cost-link-big:hover{filter:brightness(.96);transform:translateY(-1px);}
+.tip-highlight{background:#FFF3CD;border:2px solid #FFC107;border-radius:10px;padding:14px 16px;margin-top:13px;}
+.tip-highlight-title{font-size:13.5px;font-weight:900;color:#856404;margin-bottom:8px;}
+.tip-highlight-body{font-size:13px;color:#333;line-height:1.7;}
+@media(max-width:680px){.install-grid{grid-template-columns:1fr;}.cost-link-big{font-size:18px;width:100%;justify-content:center;text-align:center;}}
+
+@media(max-width:680px){.two-col,.pipe-grid,.install-grid{grid-template-columns:1fr;}.three-col{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+<div class="hdr-inner">
+<div class="hdr-top">
+  <div style="display:flex;align-items:center;gap:11px;">
+    <div class="logo">CARRIER</div>
+    <div class="ht">
+      <h1>캐리어 에어컨 상담 가이드</h1>
+      <p>냉방기 · 냉난방기 라인업 · 설치안내 · 추가설치비 통합 참고자료 | 2025~2026년 기준</p>
+    </div>
+  </div>
+  <a class="hdr-link" href="https://www.carriermall.co.kr" target="_blank">🔗 캐리어몰 바로가기</a>
+</div>
+<div class="tabs">
+  <button class="tab active" onclick="T('lineup',this)">📋 제품 라인업</button>
+  <button class="tab" onclick="T('basic',this)">🔧 기본 설치 안내</button>
+  <button class="tab" onclick="T('cost',this)">💰 추가설치비용</button>
+  <button class="tab" onclick="T('tip',this)">💬 상담 팁</button>
+</div>
+</div>
+</div>
+
+<div class="content">
+
+<!-- ===== TAB 1: 제품 라인업 ===== -->
+<div id="tab-lineup" class="tab-panel active">
+
+<!-- 구조 안내 -->
+<div class="card">
+<div class="ch"><div class="ci">🏠</div><h2>캐리어 라인업 구조 — 냉방기 vs 냉난방기</h2></div>
+<div class="rb">
+  <strong>📌 가장 먼저 확인:</strong> 캐리어는 <strong>냉방 전용(냉방기)</strong>과 <strong>사계절 냉난방(냉난방기)</strong>이 완전히 분리된 라인업입니다. 상담 시 난방 필요 여부를 먼저 확인하세요.
+</div>
+<div class="two-col" style="margin-top:14px;">
+  <div class="ii">
+    <h4>❄️ 냉방기 (여름 전용)</h4>
+    <ul>
+      <li><strong>벽걸이:</strong> AARB (6·8·10평) / DARB (16평)</li>
+      <li><strong>스탠드 에어로 X:</strong> 16·23평 (AI 프리미엄)</li>
+      <li><strong>스탠드 DA:</strong> 16·18·23평 (기본 인버터)</li>
+      <li><strong>대형 LPAC:</strong> 63·80평</li>
+      <li>TWO-ONE(2in1) 구성 가능 — 에어로 X 라인</li>
+    </ul>
+  </div>
+  <div class="ii" style="border-left-color:var(--cr-main);">
+    <h4>🌡️ 냉난방기 (사계절)</h4>
+    <ul>
+      <li><strong>벽걸이 스탠다드:</strong> RARP (7·9·12·16평)</li>
+      <li><strong>스탠드 PAC-X:</strong> 16·18·23평 (AI 프리미엄)</li>
+      <li><strong>스탠드 PAC-A:</strong> 16·18·23평 (기본형)</li>
+      <li><strong>스탠드 DA:</strong> 16·18·24평 (기본 인버터)</li>
+      <li><strong>대형 MPAC·LPAC:</strong> 25~80평</li>
+      <li><strong>천장형:</strong> 23·30·40평</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- ===== 냉방기 섹션 ===== -->
+<div class="section-divider"><span>❄️ 냉방기 (냉방 전용) 라인업</span></div>
+
+<!-- 냉방기 스탠드 핵심 비교 -->
+<div class="card">
+<div class="ch"><div class="ci">🔑</div><h2>냉방기 스탠드 핵심 비교 — 에어로 X vs DA</h2></div>
+<div class="wb">
+  <strong>⚠️ 가장 많이 혼동하는 포인트:</strong> 에어로 X(SASB/RASC)와 DA(DAMC)는 같은 스탠드형이지만 <strong>AI 기능 유무</strong>에서 완전히 다릅니다. 고객이 "스탠드 에어컨 하나 보여주세요"라고 하면 에어로 X vs DA 중 어떤 등급이 필요한지 먼저 파악하세요.
+</div>
+<div style="margin-top:14px;">
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col class="cat"><col class="feat"><col class="model"><col class="model"></colgroup>
+<thead>
+<tr>
+  <th colspan="2" style="background:var(--cr-hdr);">구분</th>
+  <th>에어로 X (SASB / RASC)<small>🆕 AI 프리미엄 스탠드</small></th>
+  <th>DA (DAMC)<small>기본 인버터 스탠드</small></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="cat-cell">포지션</td>
+  <td class="feat-cell">등급</td>
+  <td><span class="bdg bdg-navy">AI 프리미엄</span><span class="note-sm">에어로 18단 계열</span></td>
+  <td><span class="bdg bdg-gray">기본 인버터</span><span class="note-sm">실속·보급형</span></td>
+</tr>
+<tr>
+  <td class="cat-cell" rowspan="2">냉방</td>
+  <td class="feat-cell">3D 입체냉방</td>
+  <td><span class="ok">○</span> 상단 서큘레이터 + 좌우 기류</td>
+  <td><span class="ng">✗</span> 기본 상하 기류</td>
+</tr>
+<tr>
+  <td class="feat-cell">간접냉방</td>
+  <td><span class="ok">○</span> 설정온도 도달 후 자동전환</td>
+  <td><span class="ng">✗</span></td>
+</tr>
+<tr>
+  <td class="cat-cell" rowspan="4">AI<br>기능</td>
+  <td class="feat-cell">18단 에어컨트롤</td>
+  <td><span class="ok">○</span></td>
+  <td><span class="ng">✗</span></td>
+</tr>
+<tr>
+  <td class="feat-cell">환경맞춤 AI 운전</td>
+  <td><span class="ok">○</span></td>
+  <td><span class="ng">✗</span></td>
+</tr>
+<tr>
+  <td class="feat-cell">음성인식</td>
+  <td><span class="ok">○</span></td>
+  <td><span class="ng">✗</span></td>
+</tr>
+<tr>
+  <td class="feat-cell">캐리어싱크 (스마트폰)</td>
+  <td><span class="ok">○</span></td>
+  <td><span class="bdg bdg-amber">일부 모델 지원</span></td>
+</tr>
+<tr>
+  <td class="cat-cell" rowspan="2">위생</td>
+  <td class="feat-cell">동결세척 / 자동건조</td>
+  <td><span class="ok">○</span></td>
+  <td><span class="bdg bdg-amber">모델별 확인</span></td>
+</tr>
+<tr>
+  <td class="feat-cell">OTA 업데이트</td>
+  <td><span class="ok">○</span></td>
+  <td><span class="ng">✗</span></td>
+</tr>
+<tr>
+  <td class="cat-cell">TWO-ONE</td>
+  <td class="feat-cell">2in1 구성</td>
+  <td><span class="ok">○</span> +6평 벽걸이 세트 모델 있음<span class="note-sm">16평+6평 / 23평+6평</span></td>
+  <td><span class="ng">✗</span> TWO-ONE 없음</td>
+</tr>
+<tr>
+  <td class="cat-cell">모델</td>
+  <td class="feat-cell">대표 모델명</td>
+  <td>SASB-0161XAWMDT (16평)<br>RASC-0232XAWMD (23평)</td>
+  <td>DAMC-0653DAWSDT (16평)<br>DAMC-0853DAWSDT (23평)</td>
+</tr>
+<tr>
+  <td class="cat-cell">가격</td>
+  <td class="feat-cell">포지션</td>
+  <td><span class="bdg bdg-red">고가</span></td>
+  <td><span class="bdg bdg-green">실속</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="wb" style="margin-top:12px;">
+  <strong>⚠️ RASC vs DAMC 혼동 주의:</strong> RASC-0232XAWMD(에어로 X 23평)와 DAMC-0853DAWSDT(DA 23평)는 같은 23평이지만 <strong>완전히 다른 라인업</strong>입니다. RASC = 에어로 X 프리미엄 / DAMC = DA 기본형. 모델명의 "X" 유무로 구분하세요.
+</div>
+</div>
+
+<!-- 냉방기 제품 목록 -->
+<div class="card">
+<div class="ch"><div class="ci">❄️</div><h2>냉방기 — 전체 렌탈 라인업 (엑셀 기준)</h2></div>
+
+<div class="sl">벽걸이 냉방기 (AARB / DARB) — 방·소형 공간</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:90px"><col style="width:80px"><col style="width:auto"><col style="width:130px"></colgroup>
+<thead><tr><th style="background:var(--cr-hdr);">평형</th><th style="background:var(--cr-hdr);">모델명</th><th style="background:var(--cr-hdr);">특징</th><th class="hl">비고</th></tr></thead>
+<tbody>
+<tr><td>6평</td><td>AARB-0062GDWSDT</td><td>인버터 · 1등급 · 자동건조 · 자기진단</td><td class="hl-col"><span class="bdg bdg-green">원룸·소형방</span></td></tr>
+<tr><td>8평</td><td>AARB-0081FAWSDT</td><td>인버터 · 1등급 · 자동건조 · 자기진단</td><td class="hl-col"><span class="bdg bdg-green">방·침실</span></td></tr>
+<tr><td>10평</td><td>AARB-0101FAWSDT</td><td>인버터 · 1등급 · 자동건조 · 자기진단</td><td class="hl-col"><span class="bdg bdg-green">중형방</span></td></tr>
+<tr><td>16평</td><td>DARB-0161FAWSDT</td><td>인버터 · 1등급 · 자동건조 · 자기진단</td><td class="hl-col"><span class="bdg bdg-amber">넓은 방·소형거실</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="sl" style="margin-top:16px;">스탠드 에어로 X — AI 프리미엄 (거실용)</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:100px"><col style="width:160px"><col style="width:auto"><col style="width:110px"></colgroup>
+<thead><tr><th style="background:var(--cr-hdr);">평형</th><th style="background:var(--cr-hdr);">모델명</th><th style="background:var(--cr-hdr);">특징</th><th>구성</th></tr></thead>
+<tbody>
+<tr><td>16평</td><td>SASB-0161XAWMDT</td><td>에어로 18단 · AI운전 · 3D냉방 · 음성인식 · 캐리어싱크</td><td>단품</td></tr>
+<tr><td>16평+6평</td><td>SASB-0161XAWMDGT</td><td>에어로 18단 · AI운전 · 3D냉방 · 캐리어싱크</td><td><span class="bdg bdg-navy">TWO-ONE</span></td></tr>
+<tr><td>23평</td><td>RASC-0232XAWMD</td><td>에어로 18단 · AI운전 · 3D냉방 · 음성인식 · 캐리어싱크</td><td>단품</td></tr>
+<tr><td>23평+6평</td><td>RASC-0232XAWMDG</td><td>에어로 18단 · AI운전 · 3D냉방 · 캐리어싱크</td><td><span class="bdg bdg-navy">TWO-ONE</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="sl" style="margin-top:16px;">스탠드 DA — 기본 인버터 (거실·사무실)</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:90px"><col style="width:160px"><col style="width:auto"><col style="width:110px"></colgroup>
+<thead><tr><th style="background:var(--cr-hdr);">평형</th><th style="background:var(--cr-hdr);">모델명</th><th style="background:var(--cr-hdr);">특징</th><th class="hl">비고</th></tr></thead>
+<tbody>
+<tr><td>16평</td><td>DAMC-0653DAWSDT</td><td>인버터 스탠드 · 기본냉방 · 스마트폰제어(일부)</td><td class="hl-col"><span class="bdg bdg-gray">실속형</span></td></tr>
+<tr><td>18평</td><td>DAMC-0723DAWSDT</td><td>인버터 스탠드 · 기본냉방 · 스마트폰제어(일부)</td><td class="hl-col"><span class="bdg bdg-gray">실속형</span></td></tr>
+<tr><td>23평</td><td>DAMC-0853DAWSDT</td><td>인버터 스탠드 · 기본냉방 · 스마트폰제어(일부)</td><td class="hl-col"><span class="bdg bdg-gray">실속형</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="sl" style="margin-top:16px;">대형 LPAC — 업소·중대형 공간</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:90px"><col style="width:160px"><col style="width:auto"><col style="width:110px"></colgroup>
+<thead><tr><th style="background:var(--cr-hdr);">평형</th><th style="background:var(--cr-hdr);">모델명</th><th style="background:var(--cr-hdr);">특징</th><th class="hl">비고</th></tr></thead>
+<tbody>
+<tr><td>63평</td><td>DLCF2301LAWWSXT</td><td>대형 인버터 스탠드 · 업소·중대형 공간</td><td class="hl-col"><span class="bdg bdg-purple">대형</span></td></tr>
+<tr><td>80평</td><td>DLCF2901LAWWSXT</td><td>대형 인버터 스탠드 · 업소·중대형 공간</td><td class="hl-col"><span class="bdg bdg-purple">대형</span></td></tr>
+</tbody>
+</table>
+</div>
+<div class="fn"><ul>
+  <li>기본설치비 면제 기준: 벽걸이 14만원 / 스탠드 27만원 / TWO-ONE 35만원 / LPAC 60만원</li>
+  <li>에어로 X TWO-ONE 구성 시 실외기 1대로 스탠드+벽걸이(6평) 동시 운전. 설치비는 스탠드 기준 적용</li>
+</ul></div>
+</div>
+
+<!-- ===== 냉난방기 섹션 ===== -->
+<div class="section-divider"><span>🌡️ 냉난방기 (사계절 냉난방) 라인업</span></div>
+
+<!-- 냉난방기 스탠드 핵심 비교 -->
+<div class="card">
+<div class="ch"><div class="ci">🔑</div><h2>냉난방기 스탠드 핵심 비교 — PAC-X vs PAC-A vs DA</h2></div>
+<div class="rb">
+  <strong>📌 냉난방기 스탠드 3종 구분:</strong> PAC-X(AI 프리미엄) &gt; PAC-A(기본형) &gt; DA(실속형). 렌탈 상담 시 AI 기능이나 효율 요구 수준에 따라 안내하세요.
+</div>
+<div style="margin-top:14px;">
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col class="cat"><col class="feat"><col class="model"><col class="model"><col class="model"></colgroup>
+<thead>
+<tr>
+  <th colspan="2" style="background:var(--cr-hdr);">구분</th>
+  <th>PAC-X (RSQC/RSQD·X)<small>AI 프리미엄 냉난방기</small></th>
+  <th>PAC-A (RSQC·A)<small>기본형 냉난방기</small></th>
+  <th>DA (DAMQ/EAMQ)<small>실속형 냉난방기</small></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="cat-cell">등급</td>
+  <td class="feat-cell">포지션</td>
+  <td><span class="bdg bdg-navy">AI 프리미엄</span></td>
+  <td><span class="bdg bdg-blue">기본 냉난방</span></td>
+  <td><span class="bdg bdg-gray">실속형</span></td>
+</tr>
+<tr>
+  <td class="cat-cell" rowspan="2">냉방</td>
+  <td class="feat-cell">3D 입체냉방</td>
+  <td><span class="ok">○</span></td>
+  <td><span class="bdg bdg-amber">모델별 확인</span></td>
+  <td><span class="ng">✗</span></td>
+</tr>
+<tr>
+  <td class="feat-cell">간접냉방</td>
+  <td><span class="ok">○</span></td>
+  <td><span class="ng">✗</span></td>
+  <td><span class="ng">✗</span></td>
+</tr>
+<tr>
+  <td class="cat-cell" rowspan="3">AI</td>
+  <td class="feat-cell">환경맞춤 AI 운전</td>
+  <td><span class="ok">○</span></td>
+  <td><span class="ng">✗</span></td>
+  <td><span class="ng">✗</span></td>
+</tr>
+<tr>
+  <td class="feat-cell">캐리어싱크</td>
+  <td><span class="ok">○</span></td>
+  <td><span class="ok">○</span></td>
+  <td><span class="bdg bdg-amber">일부 모델</span></td>
+</tr>
+<tr>
+  <td class="feat-cell">OTA 업데이트</td>
+  <td><span class="ok">○</span></td>
+  <td><span class="ng">✗</span></td>
+  <td><span class="ng">✗</span></td>
+</tr>
+<tr>
+  <td class="cat-cell">모델</td>
+  <td class="feat-cell">평형 구성</td>
+  <td>16 · 18 · 23평</td>
+  <td>16 · 18 · 23평</td>
+  <td>16 · 18 · 24평</td>
+</tr>
+<tr>
+  <td class="cat-cell">가격</td>
+  <td class="feat-cell">포지션</td>
+  <td><span class="bdg bdg-red">고가</span></td>
+  <td><span class="bdg bdg-amber">중간</span></td>
+  <td><span class="bdg bdg-green">실속</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<!-- 냉난방기 전체 제품 목록 -->
+<div class="card">
+<div class="ch"><div class="ci">🌡️</div><h2>냉난방기 — 전체 렌탈 라인업 (엑셀 기준)</h2></div>
+
+<div class="sl">벽걸이 냉난방기 스탠다드 (RARP) — 방·침실 사계절</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:80px"><col style="width:160px"><col style="width:auto"><col style="width:110px"></colgroup>
+<thead><tr><th style="background:var(--cr-hdr);">평형</th><th style="background:var(--cr-hdr);">모델명</th><th style="background:var(--cr-hdr);">특징</th><th class="hl">케어</th></tr></thead>
+<tbody>
+<tr><td>7평</td><td>RARP-0071GAWSD</td><td>인버터 · 스탠다드 · 자동건조 · 자기진단</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+<tr><td>9평</td><td>RARP-0091GAWSD</td><td>인버터 · 스탠다드 · 자동건조 · 자기진단</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+<tr><td>12평</td><td>RARP-0121GAWSD</td><td>인버터 · 스탠다드 · 자동건조 · 자기진단</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+<tr><td>16평</td><td>RARP-0161GAWSD</td><td>인버터 · 스탠다드 · 자동건조 · 자기진단</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="sl" style="margin-top:16px;">스탠드 PAC-X — AI 프리미엄 냉난방기</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:80px"><col style="width:160px"><col style="width:auto"><col style="width:110px"></colgroup>
+<thead><tr><th style="background:var(--cr-hdr);">평형</th><th style="background:var(--cr-hdr);">모델명</th><th style="background:var(--cr-hdr);">특징</th><th class="hl">케어</th></tr></thead>
+<tbody>
+<tr><td>16평</td><td>RSQC161XAWWSD</td><td>에어로 18단 · AI운전 · 3D냉난방 · 캐리어싱크 · OTA</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+<tr><td>18평</td><td>RSQD181XAWWSD</td><td>에어로 18단 · AI운전 · 3D냉난방 · 캐리어싱크 · OTA</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+<tr><td>23평</td><td>RSQD231XAWWSD</td><td>에어로 18단 · AI운전 · 3D냉난방 · 캐리어싱크 · OTA</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="sl" style="margin-top:16px;">스탠드 PAC-A — 기본형 냉난방기</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:80px"><col style="width:160px"><col style="width:auto"><col style="width:110px"></colgroup>
+<thead><tr><th style="background:var(--cr-hdr);">평형</th><th style="background:var(--cr-hdr);">모델명</th><th style="background:var(--cr-hdr);">특징</th><th class="hl">케어</th></tr></thead>
+<tbody>
+<tr><td>16평</td><td>RSQC161AAWWSD</td><td>인버터 냉난방 · 캐리어싱크 · 자동건조</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+<tr><td>18평</td><td>RSQC181AAWWSD</td><td>인버터 냉난방 · 캐리어싱크 · 자동건조</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+<tr><td>23평</td><td>RSQC231AAWWSD</td><td>인버터 냉난방 · 캐리어싱크 · 자동건조</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="sl" style="margin-top:16px;">스탠드 DA — 실속형 냉난방기</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:80px"><col style="width:160px"><col style="width:auto"><col style="width:110px"></colgroup>
+<thead><tr><th style="background:var(--cr-hdr);">평형</th><th style="background:var(--cr-hdr);">모델명</th><th style="background:var(--cr-hdr);">특징</th><th class="hl">케어</th></tr></thead>
+<tbody>
+<tr><td>16평</td><td>DAMQ-0653DAWSDT</td><td>기본 인버터 냉난방 · 스마트폰제어(일부)</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+<tr><td>18평</td><td>DAMQ-0721DAWSDT</td><td>기본 인버터 냉난방 · 스마트폰제어(일부)</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+<tr><td>24평</td><td>EAMQ-0851DAWSD</td><td>기본 인버터 냉난방 · 스마트폰제어(일부)</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="sl" style="margin-top:16px;">대형 MPAC — 중대형 냉난방기 (25~40평)</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:80px"><col style="width:160px"><col style="width:auto"><col style="width:110px"></colgroup>
+<thead><tr><th style="background:var(--cr-hdr);">평형</th><th style="background:var(--cr-hdr);">모델명</th><th style="background:var(--cr-hdr);">특징</th><th class="hl">케어</th></tr></thead>
+<tbody>
+<tr><td>25평</td><td>RAMQ-0902LAWSD</td><td>중대형 인버터 냉난방 · 넓은 거실·사무실</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+<tr><td>30평</td><td>RAMQ-1102KAWSX</td><td>중대형 인버터 냉난방 · 삼상(3상) 확인 필요</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+<tr><td>40평</td><td>RAMQ-1452KAWSX</td><td>중대형 인버터 냉난방 · 삼상(3상) 확인 필요</td><td class="hl-col">미포함 / 1회 선택</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="sl" style="margin-top:16px;">대형 LPAC — 업소·대형 냉난방기 (60~80평)</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:80px"><col style="width:160px"><col style="width:auto"><col style="width:110px"></colgroup>
+<thead><tr><th style="background:var(--cr-hdr);">평형</th><th style="background:var(--cr-hdr);">모델명</th><th style="background:var(--cr-hdr);">특징</th><th class="hl">비고</th></tr></thead>
+<tbody>
+<tr><td>60평</td><td>AALQ-2302LAWSX</td><td>대형 인버터 냉난방 · 업소·대형 공간</td><td class="hl-col"><span class="bdg bdg-purple">대형</span></td></tr>
+<tr><td>80평</td><td>AALQ-2902LAWSX</td><td>대형 인버터 냉난방 · 업소·대형 공간</td><td class="hl-col"><span class="bdg bdg-purple">대형</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="sl" style="margin-top:16px;">천장형 냉난방기 (DATQ) — 천장 매립형</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:80px"><col style="width:160px"><col style="width:auto"><col style="width:110px"></colgroup>
+<thead><tr><th style="background:var(--cr-hdr);">평형</th><th style="background:var(--cr-hdr);">모델명</th><th style="background:var(--cr-hdr);">특징</th><th class="hl">비고</th></tr></thead>
+<tbody>
+<tr><td>23평</td><td>DATQ-0851GAWSDT</td><td>천장 카세트형 냉난방 · 4방향 기류</td><td class="hl-col"><span class="bdg bdg-teal">천장형</span></td></tr>
+<tr><td>30평</td><td>DATQ-1101GAWSXTT</td><td>천장 카세트형 냉난방 · 4방향 기류</td><td class="hl-col"><span class="bdg bdg-teal">천장형</span></td></tr>
+<tr><td>40평</td><td>DATQ-1451GAWSXTT</td><td>천장 카세트형 냉난방 · 4방향 기류</td><td class="hl-col"><span class="bdg bdg-teal">천장형</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="fn"><ul>
+  <li>냉난방기 벽걸이(RARP) · 스탠드(PAC-X/A, DA) · 천장형은 모두 케어서비스 1회 선택 가능 — 계약 1년차 또는 2년차 방문 예정</li>
+  <li>MPAC 25~40평 / LPAC 60~80평은 삼상(3상) 전원 여부 사전 확인 필요</li>
+  <li>천장형은 기본설치비 면제 기준 40만원 (23평) / 50만원 (30·40평), 설치 환경 사전 확인 필수</li>
+  <li>냉난방기 벽걸이 기본설치비 면제 기준: 14만원</li>
+</ul></div>
+</div>
+
+<!-- 용도별 추천 -->
+<div class="card">
+<div class="ch"><div class="ci">💡</div><h2>용도별 추천 가이드</h2></div>
+<div class="rec-grid">
+  <div class="rec-card hl">
+    <div class="rec-tg" style="color:var(--cr-main);">거실 · AI 냉방</div>
+    <h3>에어로 X (냉방기)</h3>
+    <p>AI 운전·3D 냉방·음성인식이 필요한 거실용 프리미엄 고객. 방 추가 냉방은 TWO-ONE 구성으로 해결. 삼성 갤러리·Q9000과 비교 대상.</p>
+  </div>
+  <div class="rec-card">
+    <div class="rec-tg" style="color:#455A64;">거실 · 실속 냉방</div>
+    <h3>DA 스탠드 (냉방기)</h3>
+    <p>AI 없이 기본 냉방만 원하고 예산이 중요한 고객. 인버터로 전기세 효율은 유지하면서 가격 부담을 낮춥니다.</p>
+  </div>
+  <div class="rec-card">
+    <div class="rec-tg" style="color:var(--teal);">거실 · AI 사계절</div>
+    <h3>PAC-X (냉난방기)</h3>
+    <p>거실에 냉방+난방을 모두 원하는 고객. AI 기능·3D 냉난방까지 원한다면 PAC-X. 에어로 X와 유사한 수준의 냉난방기 버전.</p>
+  </div>
+  <div class="rec-card">
+    <div class="rec-tg" style="color:#1565C0;">거실 · 기본 사계절</div>
+    <h3>PAC-A / DA (냉난방기)</h3>
+    <p>AI 없이 냉난방만 원하는 고객. PAC-A는 캐리어싱크(앱 제어) 지원, DA는 가격이 더 낮은 실속형.</p>
+  </div>
+  <div class="rec-card">
+    <div class="rec-tg" style="color:#558B2F;">방 · 냉방</div>
+    <h3>AARB 벽걸이 (냉방기)</h3>
+    <p>방·침실 냉방 전용. 6·8·10평은 원룸·작은방에 최적. 1등급 인버터로 전기세 효율 우수.</p>
+  </div>
+  <div class="rec-card">
+    <div class="rec-tg" style="color:#6A1B9A;">방 · 사계절</div>
+    <h3>RARP 벽걸이 (냉난방기)</h3>
+    <p>방에서 냉방+난방을 원하는 고객. 7·9·12·16평 구성. 케어서비스 1회 선택으로 관리 편의성 추가 가능.</p>
+  </div>
+</div>
+</div>
+
+</div><!-- end tab-lineup -->
+
+<!-- ===== TAB 2: 기본 설치 안내 ===== -->
+<div id="tab-basic" class="tab-panel">
+
+<!-- 기본 설치 안내 -->
+<div class="card">
+<div class="ch"><div class="ci">🔧</div><h2>캐리어 에어컨 기본 설치 안내</h2></div>
+<div class="rb">
+  <strong>📌 기본 설치 안내:</strong> 기본 배관 범위 및 기본 타공 횟수 내에서는 무상 설치 기준으로 안내하고, 현장 환경에 따라 추가 비용이 발생할 수 있습니다.
+</div>
+
+<div class="install-grid">
+  <div class="install-card">
+    <div class="install-card-head">📦 기본 배관 제공 기준</div>
+    <div class="install-card-body">
+      <div class="install-row"><span class="install-label">🪟 벽걸이 단품</span><span class="install-value">기본 배관 5M</span></div>
+      <div class="install-row"><span class="install-label">🏠 스탠드 단품</span><span class="install-value">기본 배관 8M</span></div>
+      <div class="install-row"><span class="install-label">🔗 멀티형(2in1) 벽걸이</span><span class="install-value">기본 배관 8M</span></div>
+      <div class="install-row"><span class="install-label">🔗 멀티형(2in1) 스탠드</span><span class="install-value">기본 배관 8M</span></div>
+    </div>
+  </div>
+  <div class="install-card">
+    <div class="install-card-head">🧱 기본 타공 제공 기준</div>
+    <div class="install-card-body">
+      <div class="install-row"><span class="install-label">기본 타공</span><span class="install-value">2회 무상</span></div>
+      <div class="install-row"><span class="install-label">멀티형 / (2+1)</span><span class="install-value">3회 무상</span></div>
+      <ul class="install-bullets">
+        <li>무상 범위 초과 작업은 현장 확인 후 기사님이 비용 안내</li>
+        <li>설치 위치, 외벽 작업, 배관 연장, 앵글 설치 등에 따라 추가비 발생 가능</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 기존 제품 철거비 안내 -->
+<div class="card">
+<div class="ch"><div class="ci">🗑️</div><h2>기존 제품 철거비 안내</h2></div>
+<div class="ob">
+  <strong>✅ 신제품 구입 후 동일장소 교체 설치 시 무료</strong>입니다. 단, 기사님이 철거 제품을 수거하는 조건입니다.
+</div>
+<div class="two-col" style="margin-top:12px;">
+  <div class="ii" style="border-left-color:var(--cr-main);">
+    <h4>무료 철거 조건</h4>
+    <ul>
+      <li>신제품 구입 후 동일장소에 교체 설치</li>
+      <li>철거 제품을 기사님이 수거하는 조건</li>
+      <li>동일 장소·동일 유형 교체 설치 기준</li>
+    </ul>
+  </div>
+  <div class="ii" style="border-left-color:var(--warn);">
+    <h4>유상 또는 견적 진행 조건</h4>
+    <ul>
+      <li>제품 철거 후 고객 보관 시 철거비용 고객 부담</li>
+      <li>철거되는 제품이 천장형인 경우 견적 진행</li>
+      <li>철거되는 제품이 실내기 스탠드형 82.6㎡ 이상인 경우 견적 진행</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- 일반배관 vs 매립배관 -->
+<div class="card">
+<div class="ch"><div class="ci">🔩</div><h2>일반배관 vs 매립배관 — 먼저 확인하세요</h2></div>
+<div class="rb">
+  <strong>🏠 설치환경을 확인하세요!</strong><br>
+  배관 형태에 따라 주문 모델과 설치비가 달라질 수 있습니다. 상담 및 접수 시 일반배관인지 매립배관인지 먼저 확인하세요.
+</div>
+
+<div class="sl" style="margin-top:16px;">설치 유형별 안내</div>
+<div class="pipe-grid">
+  <div class="pipe-card pc-gen">
+    <div class="pipe-tag pt-g">일반 배관</div>
+    <h4>표준 신규 설치</h4>
+    <ul>
+      <li>배관이 벽 바깥으로 노출되는 일반 설치 방식</li>
+      <li>벽걸이 5M / 스탠드 8M 기본 배관 기준</li>
+      <li>아파트·일반 주택 표준 설치 환경</li>
+      <li>실외기를 실내기 인접 외부에 설치</li>
+      <li>추가 배관 연장 시 별도 비용 발생</li>
+    </ul>
+  </div>
+  <div class="pipe-card pc-emb">
+    <div class="pipe-tag pt-e">매립 배관</div>
+    <h4>벽 내부 기설치 배관 활용</h4>
+    <ul>
+      <li>벽 안에 배관이 미리 설치된 방식</li>
+      <li>신축 아파트·사전 시공 현장에 해당</li>
+      <li>배관 규격·상태 사전 확인 필요</li>
+      <li>기존 냉매 잔류 시 별도 처리 필요</li>
+      <li>매립배관 세척 및 누설 테스트가 필요할 수 있음</li>
+    </ul>
+  </div>
+</div>
+
+<div class="pipe-diff">
+  <div class="pd-row"><div class="pd-label">구분</div><div class="pd-gen" style="color:#455A64;font-weight:700;">일반배관</div><div class="pd-emb" style="color:#283593;font-weight:700;">매립배관</div></div>
+  <div class="pd-row"><div class="pd-label">배관 위치</div><div class="pd-gen">외부 노출</div><div class="pd-emb">벽 속 내부 매립</div></div>
+  <div class="pd-row"><div class="pd-label">기본 배관</div><div class="pd-gen">벽걸이 5M / 스탠드 8M</div><div class="pd-emb">현장 배관 상태 확인 필요</div></div>
+  <div class="pd-row"><div class="pd-label">확인 사항</div><div class="pd-gen">배관 연장·타공 여부</div><div class="pd-emb">배관 규격·누설·세척 여부</div></div>
+</div>
+</div>
+
+<!-- TWO-ONE 설치 특이사항 -->
+<div class="card">
+<div class="ch"><div class="ci">🔗</div><h2>TWO-ONE (2in1) 설치 특이사항</h2></div>
+<div class="ib">
+  <strong>TWO-ONE 구성:</strong> 실외기 1대에 스탠드형 실내기 1대 + 벽걸이형 실내기 1대를 연결하는 방식입니다. 스탠드와 벽걸이를 각각 설치하는 것보다 실외기 비용·공간을 절약할 수 있습니다. 단, 실외기 1대가 두 실내기를 동시 운전하므로 동시 풀파워 가동 시 효율이 낮아질 수 있습니다.
+</div>
+</div>
+
+<!-- 설치 전 필수 확인 사항 -->
+<div class="card">
+<div class="ch"><div class="ci">✅</div><h2>설치 전 필수 확인 사항</h2></div>
+<div class="two-col">
+  <div class="ii">
+    <h4>실외기 설치 공간</h4>
+    <ul>
+      <li>실외기 거치대 / 바닥 공간 확보</li>
+      <li>아파트 실외기 선반 규격 확인</li>
+      <li>고층·옥상·특수 위치 추가비 발생</li>
+      <li>방음벽·난간 설치 환경 사전 확인</li>
+    </ul>
+  </div>
+  <div class="ii">
+    <h4>실내기 설치 환경</h4>
+    <ul>
+      <li>벽걸이: 외벽 근접 및 타공 가능 여부</li>
+      <li>스탠드: 배관 인출구 위치 확인</li>
+      <li>냉난방기: 배관 크기가 냉방 전용보다 굵음</li>
+      <li>콘크리트·벽돌벽 타공 시 추가비 발생</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- 캐리어 설치 서비스 연락처 -->
+<div class="card">
+<div class="ch"><div class="ci">☎️</div><h2>캐리어 설치 서비스 연락처</h2></div>
+<div class="ob">
+  <strong>캐리어 고객센터:</strong> 1588-8866 (소모품구입·서비스) / 1544-8820 (렌탈)<br>
+  <strong>캐치 세척서비스:</strong> 캐리어몰(carriermall.co.kr) → 세척서비스 탭에서 간편 상담 신청 가능<br>
+  <strong>설치 문의:</strong> 구매처(캐리어몰·대리점) 통해 설치 기사 배정 / 평균 설치 소요 시간 2~3시간
+</div>
+</div>
+
+</div><!-- end tab-basic -->
+
+<!-- ===== TAB 3: 추가설치비용 ===== -->
+<div id="tab-cost" class="tab-panel">
+<div class="card">
+<div class="ch"><div class="ci">💰</div><h2>캐리어 공식 설치비용 안내</h2></div>
+<div class="ob">
+  <strong>✅ 출처:</strong> 캐리어몰 공식 설치비 안내 페이지 기준 (2025년 3월 1일 적용 / VAT 포함)<br>
+  <a class="cost-link-big" href="https://www.carriermall.co.kr/page/index?tpl=etc/ariServiecInstall.html" target="_blank">🔗 캐리어몰 공식 설치비 페이지</a>
+</div>
+
+<!-- ① 추가설치비 -->
+<div class="sl" style="margin-top:4px;">① 신규 설치 추가비용 (2025년 3월 1일~ / VAT 포함)</div>
+<div class="rb">
+  <strong>기본 배관 무상 범위:</strong> 벽걸이 5M / 스탠드 8M / 멀티형(2in1) 벽걸이 8M + 스탠드 8M — 초과분부터 아래 단가 적용
+</div>
+
+<div class="sl" style="margin-top:14px; font-size:10.5px;">배관 (냉매 포함)</div>
+<table class="cost-tbl" style="margin-top:6px;">
+<thead><tr><th style="width:35%">항목</th><th style="width:30%">규격</th><th style="width:15%">단위</th><th style="width:20%">단가</th></tr></thead>
+<tbody>
+<tr><td rowspan="6">배관 연장 (동관)<br><span class="note">냉방기·냉난방기·인버터 공통</span></td><td>9평형(29.8㎡) 이하</td><td>M당</td><td class="price">19,000원</td></tr>
+<tr><td>13평형(42.9㎡) 이하</td><td>M당</td><td class="price">22,000원</td></tr>
+<tr><td>23평형(76.0㎡) 이하</td><td>M당</td><td class="price">25,000원</td></tr>
+<tr><td>40평형(132.2㎡) 이하</td><td>M당</td><td class="price">28,000원</td></tr>
+<tr><td>50평형(165.3㎡) 이하</td><td>M당</td><td class="price">30,000원</td></tr>
+<tr><td>50평형 초과</td><td>-</td><td class="price">별도협의</td></tr>
+<tr><td>특수 배관 (주름배관)</td><td>작업 공간 협소 시</td><td>-</td><td class="price">30,000원</td></tr>
+<tr><td>배관 용접비</td><td>매립배관 용접 시</td><td>대당</td><td class="price">15,000원<br><span class="note">일반배관 연장 시 10,000원</span></td></tr>
+<tr>
+  <td rowspan="3">선매립 배관 세척<br><span class="note">이물질 제거 필수 작업</span></td>
+  <td>2+1 (멀티형)</td><td>대</td><td class="price">100,000원</td>
+</tr>
+<tr><td>단품</td><td>대</td><td class="price">50,000원</td></tr>
+<tr><td>배관 누설 테스트</td><td>실내기 1대</td><td class="price">100,000원</td></tr>
+</tbody>
+</table>
+
+<div class="sl" style="margin-top:14px; font-size:10.5px;">냉매(GAS) 추가 주입</div>
+<table class="cost-tbl" style="margin-top:6px;">
+<thead><tr><th>냉매 종류</th><th>단위</th><th>단가</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td>R-22 / R-410A</td><td>0.1㎏당</td><td class="price">3,000원</td><td>전자저울 계량 후 사용량 청구</td></tr>
+<tr><td>R-32</td><td>0.1㎏당</td><td class="price">5,000원</td><td>현장 별도 청구 — 견적 필수</td></tr>
+</tbody>
+</table>
+
+<div class="sl" style="margin-top:14px; font-size:10.5px;">타공 · 앵글 · 실외기</div>
+<table class="cost-tbl" style="margin-top:6px;">
+<thead><tr><th style="width:35%">항목</th><th style="width:30%">규격</th><th style="width:15%">단위</th><th style="width:20%">단가</th></tr></thead>
+<tbody>
+<tr><td>타공 작업비</td><td>추가 타공 1회당<br><span class="note">기본 2회 무상 / (2+1) 3회 무상</span></td><td>개소</td><td class="price">15,000원<br><span class="note">추가 시 10,000원</span></td></tr>
+<tr><td>난타공 작업비</td><td>두께 30cm 이상 벽·옹벽</td><td>개소</td><td class="price">30,000원</td></tr>
+<tr>
+  <td rowspan="5">앵글 설치<br><span class="note">설치비+자재비 포함<br>기존 앵글 재사용 시 70,000원</span></td>
+  <td>소형 (900mm) 10평 이하</td><td>개</td><td class="price">120,000원</td>
+</tr>
+<tr><td>중형 (1,000mm) 13평 이하</td><td>개</td><td class="price">150,000원</td></tr>
+<tr><td>대형 (1,100mm) 18평 이하</td><td>개</td><td class="price">170,000원</td></tr>
+<tr><td>특대형 (1,200mm)</td><td>개</td><td class="price">180,000원</td></tr>
+<tr><td>스테인리스/함마톤 23평 이하</td><td>개</td><td class="price">200,000원</td></tr>
+<tr>
+  <td rowspan="2">실외기 받침대<br><span class="note">베란다·갤러리실 통풍 확보용</span></td>
+  <td>1단 / 23평 이하</td><td>개</td><td class="price">60,000원</td>
+</tr>
+<tr><td>2단 / 30평 이하</td><td>개</td><td class="price">180,000원</td></tr>
+<tr><td>앵글 고객 보유 시 작업비</td><td>위치 조정·고정</td><td>개</td><td class="price">70,000원</td></tr>
+<tr><td>실외기 고정 (컷팅 반도)</td><td>난간·외벽 2개소 고정</td><td>대</td><td class="price">10,000원</td></tr>
+<tr><td>설치대 내 실외기 설치/철거 (2층 이상)</td><td>아파트 외부 설치대</td><td>대</td><td class="price">30,000원</td></tr>
+</tbody>
+</table>
+
+<div class="sl" style="margin-top:14px; font-size:10.5px;">배수펌프 · 전원선 · 기타</div>
+<table class="cost-tbl" style="margin-top:6px;">
+<thead><tr><th style="width:35%">항목</th><th style="width:30%">규격</th><th style="width:15%">단위</th><th style="width:20%">단가</th></tr></thead>
+<tbody>
+<tr>
+  <td rowspan="3">배수 펌프 (기본 호스 포함)<br><span class="note">자연배수 불가 시 강제배수 장치</span></td>
+  <td>6M~8M</td><td>개</td><td class="price">100,000원</td>
+</tr>
+<tr><td>10M~12M</td><td>개</td><td class="price">130,000원</td></tr>
+<tr><td>15M</td><td>개</td><td class="price">200,000원</td></tr>
+<tr><td>배수펌프 호스 추가</td><td>-</td><td>M당</td><td class="price">2,000원</td></tr>
+<tr>
+  <td rowspan="3">실외기 바람막이<br><span class="note">열기 위로 유도 장치</span></td>
+  <td>알루미늄 소형</td><td>개</td><td class="price">50,000원</td>
+</tr>
+<tr><td>알루미늄 중형</td><td>개</td><td class="price">60,000원</td></tr>
+<tr><td>알루미늄 대형</td><td>개</td><td class="price">70,000원</td></tr>
+<tr>
+  <td rowspan="3">전원선 (실외기~분전반)<br><span class="note">VCTF 재질 사용 불가</span></td>
+  <td>2.5SQ 이하</td><td>M당</td><td class="price">7,000원</td>
+</tr>
+<tr><td>4SQ</td><td>M당</td><td class="price">12,000원</td></tr>
+<tr><td>6SQ</td><td>M당</td><td class="price">15,000원</td></tr>
+<tr>
+  <td rowspan="2">기존 제품 철거 (단순)<br><span class="note">동일 장소 교체 시 무료 (제품 수거 조건)</span></td>
+  <td>벽걸이형</td><td>Set</td><td class="price">30,000원</td>
+</tr>
+<tr><td>스탠드형</td><td>Set</td><td class="price">50,000원</td></tr>
+<tr><td>드레인 호스</td><td>선매립·일반</td><td>개</td><td class="price">4,000원</td></tr>
+<tr><td>천정/택스 배관 선행작업</td><td>천장 위 배관 작업</td><td>M당</td><td class="price">100,000원</td></tr>
+<tr><td>배관 커버 (플라스틱)</td><td>벽걸이 배관 커버</td><td>M당</td><td class="price">40,000원</td></tr>
+<tr><td>사다리차/크레인/스카이</td><td>EV 없는 저층 3층↑ 가정용 무상</td><td>회</td><td class="price">고객 부담<br><span class="note">상업용 포함 고객 부담</span></td></tr>
+<tr><td>기타 공사 (몰딩·도선료 등)</td><td>-</td><td>-</td><td class="price">고객 협의</td></tr>
+</tbody>
+</table>
+<div class="fn"><ul>
+  <li>위 금액은 기본 설치비와 별도로 추가 작업에 따른 인건비·재료비이며 VAT 포함</li>
+  <li>인버터·중대형·냉난방기·히트펌프·전기식·오일식·가스식은 별도 견적 후 협의</li>
+  <li>전원공사(3상 4선용 동력) 필요 시 반드시 전기공사 전문 업체 의뢰 (전기공사법 제42조)</li>
+</ul></div>
+</div>
+
+<!-- ② 이전설치비 -->
+<div class="card" style="margin-top:0;">
+<div class="ch"><div class="ci">🚚</div><h2>이전설치 비용 (2025년 3월 25일~ / VAT 포함)</h2></div>
+<div class="rb">
+  <strong>📌 이전설치 = 기존 제품을 다른 장소로 이동 설치.</strong> 분리비(기존 위치 분리) + 설치비(새 위치 설치)가 각각 청구됩니다.
+</div>
+<table class="cost-tbl" style="margin-top:12px;">
+<thead><tr><th>제품 구분</th><th>용량</th><th>설치비</th><th>분리비</th></tr></thead>
+<tbody>
+<tr>
+  <td rowspan="2">벽걸이 에어컨</td>
+  <td>10평(33㎡) 이하</td>
+  <td class="price">100,000원</td>
+  <td class="price">50,000원</td>
+</tr>
+<tr>
+  <td>11평(36.3㎡) 이상</td>
+  <td class="price">120,000원</td>
+  <td class="price">50,000원</td>
+</tr>
+<tr>
+  <td rowspan="5">스탠드 에어컨</td>
+  <td>16평(52.8㎡) 이하</td>
+  <td class="price">160,000원</td>
+  <td class="price">60,000원</td>
+</tr>
+<tr>
+  <td>28평(92.4㎡) 이하</td>
+  <td class="price">210,000원</td>
+  <td class="price">90,000원</td>
+</tr>
+<tr>
+  <td>50평(165㎡) 이하</td>
+  <td class="price">300,000원</td>
+  <td class="price">120,000원</td>
+</tr>
+<tr>
+  <td>80평(264㎡) 이하</td>
+  <td class="price">400,000원</td>
+  <td class="price">150,000원</td>
+</tr>
+<tr>
+  <td>85평(280.5㎡) 이상</td>
+  <td class="price">500,000원</td>
+  <td class="price">200,000원</td>
+</tr>
+<tr>
+  <td>멀티형 에어컨 (2in1)</td>
+  <td>-</td>
+  <td class="price">250,000원</td>
+  <td class="price">100,000원</td>
+</tr>
+<tr>
+  <td rowspan="2">천정형 에어컨</td>
+  <td>23평(75.9㎡) 이하</td>
+  <td class="price">350,000원</td>
+  <td class="price">210,000원</td>
+</tr>
+<tr>
+  <td>40평(132㎡) 이하</td>
+  <td class="price">450,000원</td>
+  <td class="price">230,000원</td>
+</tr>
+<tr>
+  <td>창문형 에어컨</td>
+  <td>-</td>
+  <td class="price">50,000원</td>
+  <td class="price">50,000원</td>
+</tr>
+<tr>
+  <td>이동식 에어컨</td>
+  <td>-</td>
+  <td class="price">50,000원</td>
+  <td class="price">50,000원</td>
+</tr>
+</tbody>
+</table>
+<div class="fn"><ul>
+  <li>단가는 출장비 포함 / 방문 후 고객 취소(견적 포함) 시 출장비 적용</li>
+  <li>이전설치 시 기본 배관 무상 범위 없음 — 배관은 전량 고객 부담</li>
+  <li>고객 보유 배관 재활용 가능 시 추가 연장분만 청구</li>
+  <li>지면에서 3.5m 이상에서 작업 시 위험수당 30,000원 추가</li>
+  <li>크레인 사용, 매립 배관 공사, 천정형 점검구 비용은 별도 협의</li>
+</ul></div>
+</div>
+
+<!-- ③ 세척비 -->
+<div class="card" style="margin-top:0;">
+<div class="ch"><div class="ci">🧹</div><h2>캐치 세척 비용 (2025년 기준 / VAT 포함)</h2></div>
+<div class="rb">
+  <strong>📌 미분리 세척:</strong> 에바(열교환기)를 탈착하지 않고 열교환기·브로워·드레인 팬 세척<br>
+  <strong>분리 세척:</strong> 제품을 완전 분리 후 전체 분해 세척 (더 꼼꼼하지만 비용 높음)
+</div>
+<table class="cost-tbl" style="margin-top:12px;">
+<thead><tr><th>제품 구분</th><th>용량/종류</th><th>미분리 세척</th><th>분리 세척</th></tr></thead>
+<tbody>
+<tr>
+  <td rowspan="3">가정용</td>
+  <td>벽걸이</td>
+  <td class="price">99,000원</td>
+  <td class="price">150,000원</td>
+</tr>
+<tr>
+  <td>스탠드</td>
+  <td class="price">139,000원</td>
+  <td class="price">200,000원</td>
+</tr>
+<tr>
+  <td>2 in 1 (멀티형)</td>
+  <td class="price">213,000원</td>
+  <td class="price">300,000원</td>
+</tr>
+<tr>
+  <td rowspan="2">업소용</td>
+  <td>40평 미만</td>
+  <td class="price">157,000원</td>
+  <td class="price">240,000원</td>
+</tr>
+<tr>
+  <td>40평 이상</td>
+  <td class="price">186,000원</td>
+  <td class="price">270,000원</td>
+</tr>
+<tr>
+  <td rowspan="2">천장형</td>
+  <td>1~2way</td>
+  <td class="price">139,000원</td>
+  <td class="price">고객 협의</td>
+</tr>
+<tr>
+  <td>4way</td>
+  <td class="price">139,000원</td>
+  <td class="price">고객 협의</td>
+</tr>
+<tr>
+  <td>창문형 에어컨</td>
+  <td>-</td>
+  <td class="price">150,000원</td>
+  <td class="price">-</td>
+</tr>
+<tr>
+  <td>이동식 에어컨</td>
+  <td>-</td>
+  <td class="price">150,000원</td>
+  <td class="price">-</td>
+</tr>
+<tr>
+  <td>건조기</td>
+  <td>-</td>
+  <td class="price">150,000원</td>
+  <td class="price">-</td>
+</tr>
+</tbody>
+</table>
+<div class="fn"><ul>
+  <li>단가는 출장비 포함 / 방문 후 고객 취소(견적 포함) 시 출장비 적용</li>
+  <li>분리 세척 후 냉매가 부족한 경우 추가 주입 냉매량만 별도 청구</li>
+  <li>실외기 세척은 고객과 별도 협의</li>
+  <li>캐치 세척서비스 신청: 캐리어몰 → 세척서비스 탭에서 간편 상담 신청</li>
+</ul></div>
+</div>
+
+</div><!-- end tab-cost -->
+
+<!-- ===== TAB 4: 상담 팁 ===== -->
+<div id="tab-tip" class="tab-panel">
+<div class="card">
+<div class="ch"><div class="ci">💬</div><h2>캐리어 에어컨 상담 핵심 팁</h2></div>
+
+<!-- 설치비 핵심 안내 -->
+<div class="sl">설치비 관련 문의 시 핵심 안내</div>
+<div class="three-col">
+  <div class="ob" style="margin-top:0;"><strong>✅ 기본 설치 범위는 무상</strong><br>기본 배관 범위와 기본 타공 횟수 내에서는 별도 설치비 없이 진행되는 기준으로 안내합니다.</div>
+  <div class="ib" style="margin-top:0;"><strong>📍 기사님 현장 확인 필수</strong><br>배관 길이, 실외기 위치, 앵글, 매립배관 여부 등은 현장 확인 후 최종 비용이 결정됩니다.</div>
+  <div class="wb" style="margin-top:0;"><strong>⚠ 추가비 발생 가능</strong><br>배관 연장, 외벽 작업, 매립배관 세척, 앵글·받침대·배수펌프 등 현장 환경에 따라 추가비가 발생할 수 있습니다.</div>
+</div>
+<div class="tip-highlight">
+  <div class="tip-highlight-title">🏠 일반 아파트 설치 시 설치비 안내 기준</div>
+  <div class="tip-highlight-body">
+    <strong style="color:var(--cr-main);">일반적으로 기본설치비 + 약 15~20만원 사이의 추가 설치비가 발생할 수 있습니다.</strong><br>
+    → 정확한 금액은 기사님 현장 확인 후 결정되며, 사전에 확답은 금지입니다.<br><br>
+    <strong>📌 상담 시 핵심 포인트:</strong><br>
+    ① 기본 설치 외에 <u>추가 설치비가 나올 가능성이 있다</u>는 점만 미리 안내<br>
+    ② 정확한 추가 요금은 <strong>추가설치비용 자료 및 캐리어몰 공식 설치비 페이지 참고</strong> (확답 절대 금지!)
+  </div>
+</div>
+<div class="sb">
+  <div class="sl2">💬 설치비 문의 시 권장 스크립트</div>
+  "고객님, 기본 배관 범위와 기본 타공 횟수 내에서는 무상 설치 기준으로 안내드릴 수 있습니다. 다만 실제 설치 환경에 따라 배관 연장, 실외기 위치, 앵글, 매립배관 세척 등 추가 작업이 필요할 수 있어 정확한 금액은 기사님이 현장 확인 후 안내드립니다. 설치 전 비용 안내를 받으신 뒤 동의하신 후 진행하시면 됩니다."
+</div>
+
+
+
+<div class="sl">가장 먼저 확인할 것 — 냉방 전용 vs 냉난방 겸용</div>
+<div class="qa">
+  <div class="qq">고객이 "에어컨 하나 보러 왔어요" — 가장 먼저 물어볼 것은?</div>
+  <div class="ob">
+    <strong>① 냉방만? 냉난방 겸용?</strong> — 이것이 라인업 전체를 가르는 첫 번째 질문입니다. 캐리어는 냉방기/냉난방기가 완전히 다른 라인업이므로 이것부터 확인해야 합니다.<br>
+    <strong>② 설치 공간?</strong> — 거실(스탠드) vs 방(벽걸이) vs 거실+방 동시(TWO-ONE)<br>
+    <strong>③ 평형?</strong> — 거실 18~25평 / 방 6~10평 기준으로 안내
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qq">디오퍼스 모델 렌탈 가능할까요?</div>
+  <div class="wb">
+    디오퍼스 라인은 캐리어 최상위 모델로, <strong>구매만 가능</strong>하며 <strong>아정당에서는 렌탈 진행 불가</strong>로 안내해주세요.
+  </div>
+</div>
+
+<div class="sl" style="margin-top:18px;">모델 코드 해석 요령</div>
+<div class="qa">
+  <div class="qq">캐리어 벽걸이 모델명 구조를 쉽게 보는 법은?</div>
+  <div class="ib">
+    예: <strong>DARB-0061GAWSD</strong><br>
+    · <strong>D</strong>: 시리즈 코드 (D=DARB 계열)<br>
+    · <strong>ARB</strong>: Air conditioner, Room, Basic (벽걸이 냉방기)<br>
+    · <strong>0061</strong>: 냉방 능력 → 006 = 6평형<br>
+    · <strong>G</strong>: 연형 코드 (G=2026년형, F=2025년형 등)<br>
+    · <strong>AWSD</strong>: 배관 방식·전원·규격 코드<br><br>
+    <strong>냉난방기 여부:</strong> 모델명에 냉난방기 표기 또는 "MQ·KA·QM" 등 계열 코드로 구분. 구매처에서 반드시 냉방/냉난방 여부 확인.
+  </div>
+</div>
+
+<div class="sl" style="margin-top:18px;">자주 묻는 상담 Q&A</div>
+<div class="qa">
+  <div class="qq">캐리어 에어컨에 무풍 기능이 있나요?</div>
+  <div class="ib">
+    삼성처럼 "무풍홀"을 통한 직접 무풍 기능은 없습니다.<br>
+    캐리어의 경우 <strong>간접냉방(유풍/간접기류)</strong> 방식으로, 설정온도 도달 후 직바람을 줄이고 간접 기류로 전환합니다. 기능적 효과는 비슷하나 방식이 다릅니다.
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qq">캐리어 TWO-ONE은 어떤 건가요?</div>
+  <div class="ib">
+    실외기 1대에 실내기 2대(스탠드+벽걸이)를 연결하는 멀티형 에어컨입니다.<br><br>
+    <strong>LG전자:</strong> 2in1<br>
+    <strong>삼성전자:</strong> 홈멀티<br>
+    <strong>캐리어:</strong> TWO-ONE<br>
+    → 모두 동일한 개념으로 안내하시면 됩니다.
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qq">실외기 1대로 실내기 3~5대 이상 연결이 가능한가요? (사업장)</div>
+  <div class="wb">
+    <strong>⚠ 렌탈로는 진행 불가!</strong><br>
+    사업장에 실외기 1대로 3대 이상의 실내기를 연결하는 멀티형 시스템은 전문 업체의 시공과 공급사 연계가 필요합니다.<br>
+    → 렌탈 상품으로는 진행이 불가합니다. 전문 업체 또는 상부점으로 연계 안내 바랍니다.
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qq">설치 전에 사전 답사가 가능한가요?</div>
+  <div class="ib">
+    <strong>사업장만 사전답사 진행 가능</strong><br>
+    · 사전 답사 비용: <strong>3만원</strong><br>
+    · 사전 답사 후 접수 취소 및 신용 거절 등으로 인해 비용 반환 불가
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qq">삼상 전기와 단상 전기 차이가 뭔가요?</div>
+  <div class="two-col" style="margin-top:10px;">
+    <div class="ib" style="margin-top:0;">
+      <strong>⚡ 단상 (1φ)</strong><br>
+      일반 가정용 전기 (220V)<br>
+      전선 2가닥 (L선 + N선)<br>
+      아파트·빌라·주택 대부분<br>
+      소형~중형 에어컨 사용
+    </div>
+    <div class="wb" style="margin-top:0;">
+      <strong>⚡⚡ 삼상 (3φ)</strong><br>
+      산업용·업무용 전기 (380V)<br>
+      전선 3~4가닥 (R,S,T + N)<br>
+      상가·공장·사무실<br>
+      대형 에어컨·업소용
+    </div>
+  </div>
+  <div class="sb" style="margin-top:10px;">
+    <div class="sl2">💬 확인 방법 안내</div>
+    "분전함(두꺼비집)에서 굵은 전선 수가 2가닥이면 단상, 3~4가닥이면 삼상입니다. 또는 한국전력 고객센터(☎123)에 문의하시거나 전기요금 고지서의 '계약종별' 항목을 확인하시면 됩니다."
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qq">렌탈과 일시불 중 무엇이 유리한가요?</div>
+  <div class="ib">
+    캐리어몰에서 렌탈(케어 서비스 포함, 60개월 기준) 시 월 납입금은 상품별 다르나, 총 납입액은 일시불보다 높을 수 있습니다. 렌탈의 장점은 <strong>정기 점검·필터 관리·고장 수리</strong>가 포함된다는 점이며, 초기 비용 부담이 낮습니다. 장기 위생 관리를 원하거나 목돈이 부담스러운 고객에게 렌탈을 안내하세요.
+  </div>
+</div>
+
+<div class="qa">
+  <div class="qq">캐치 세척서비스란 무엇인가요?</div>
+  <div class="ib">
+    캐리어 공식 에어컨 세척 서비스(자사 서비스 브랜드 "캐치")입니다. 캐리어몰에서 간편 상담 신청 가능. 전문 매니저가 방문해 분해 세척을 진행합니다. 캐리어 에어컨 외 타사 제품도 신청 가능한지는 별도 문의 필요.
+  </div>
+</div>
+
+<div class="sl" style="margin-top:18px;">삼성 vs 캐리어 주요 차이점 비교 (고객 문의 시)</div>
+<div class="pipe-diff">
+  <div class="pd-row">
+    <div class="pd-label">항목</div>
+    <div class="pd-gen" style="font-weight:700;">삼성</div>
+    <div class="pd-emb" style="font-weight:700;">캐리어</div>
+  </div>
+  <div class="pd-row">
+    <div class="pd-label">간접냉방</div>
+    <div class="pd-gen">무풍 (21,000개 마이크로홀)</div>
+    <div class="pd-emb">간접기류 자동전환 (디오퍼스)</div>
+  </div>
+  <div class="pd-row">
+    <div class="pd-label">AI 냉방</div>
+    <div class="pd-gen">AI 쾌적 (온습도·패턴 학습)</div>
+    <div class="pd-emb">AI 에어 센스 / 환경맞춤 AI (PMV 기반)</div>
+  </div>
+  <div class="pd-row">
+    <div class="pd-label">음성인식</div>
+    <div class="pd-gen">빅스비 (SmartThings 연동)</div>
+    <div class="pd-emb">자체 음성인식 (디오퍼스+ 전용)</div>
+  </div>
+  <div class="pd-row">
+    <div class="pd-label">IoT 앱</div>
+    <div class="pd-gen">SmartThings</div>
+    <div class="pd-emb">캐리어싱크 (Carrier Sync)</div>
+  </div>
+  <div class="pd-row">
+    <div class="pd-label">위생관리</div>
+    <div class="pd-gen">자동건조, 열교환기세척, 이지오픈</div>
+    <div class="pd-emb">동결세척, AI 자동건조, 나노이·UV살균</div>
+  </div>
+  <div class="pd-row">
+    <div class="pd-label">멀티 구성</div>
+    <div class="pd-gen">홈멀티 (최대 다배관 가능)</div>
+    <div class="pd-emb">TWO-ONE / 다배관 멀티 (최대 6대)</div>
+  </div>
+  <div class="pd-row">
+    <div class="pd-label">OTA 업데이트</div>
+    <div class="pd-gen">SmartThings 기반</div>
+    <div class="pd-emb">디오퍼스 계열 탑재</div>
+  </div>
+</div>
+
+<div class="wb" style="margin-top:14px;">
+  <strong>📌 상담 주의사항:</strong> 본 자료는 공개 정보 기반 상담 참고용입니다. 실제 모델 구성·기능·가격은 캐리어몰(carriermall.co.kr)과 해당 제품 상세 페이지에서 최종 확인하세요. 기능 탑재 여부는 연식·모델별로 다를 수 있습니다. | 기준일: 2026년 5월
+</div>
+</div>
+</div><!-- end tab-tip -->
+
+</div><!-- end content -->
+
+<script>
+function T(id,el){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LG전자 에어컨 상담 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--lg-red:#A50034;--lg-dark:#1A1A1A;--bg:#F5F5F5;--card:#FFFFFF;--border:#E0E0E0;--text:#1A1A1A;--muted:#757575;--warn:#E65100;--hi:#FFF3E0;--ok-bg:#E8F5E9;--ok:#2E7D32;--info-bg:#E3F2FD;--info:#1565C0;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Noto Sans KR",sans-serif;background:var(--bg);color:var(--text);font-size:14px;max-width:100%;overflow-x:hidden;}
+.hdr{background:var(--lg-dark);color:white;padding:0;}
+.hdr-inner{max-width:1120px;margin:0 auto;padding:22px 20px 0;}
+.hdr-top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.logo{background:var(--lg-red);color:white;font-size:19px;font-weight:900;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ht h1{font-size:21px;font-weight:900;}
+.ht p{font-size:11px;color:rgba(255,255,255,.5);margin-top:3px;}
+.hdr-link{background:var(--lg-red);color:white;text-decoration:none;padding:7px 15px;border-radius:20px;font-size:12px;font-weight:600;white-space:nowrap;}
+.tabs{display:flex;margin-top:20px;overflow-x:auto;gap:0;}
+.tab{padding:11px 17px;font-size:13px;font-weight:600;color:rgba(255,255,255,.5);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s;border-radius:8px 8px 0 0;background:transparent;border:none;font-family:inherit;}
+.tab:hover{color:rgba(255,255,255,.85);background:rgba(255,255,255,.05);}
+.tab.active{color:white;border-bottom:3px solid var(--lg-red);background:rgba(255,255,255,.08);}
+.content{max-width:1120px;margin:0 auto;padding:22px 20px 48px;overflow-x:hidden;box-sizing:border-box;width:100%;}
+.tab-panel{display:none;overflow-x:hidden;width:100%;box-sizing:border-box;}.tab-panel.active{display:block;overflow-x:hidden;width:100%;box-sizing:border-box;}
+.card{background:var(--card);border-radius:12px;padding:20px;margin-bottom:16px;border:1px solid var(--border);box-shadow:0 1px 8px rgba(0,0,0,.05);}
+.ch{display:flex;align-items:center;gap:9px;margin-bottom:14px;padding-bottom:11px;border-bottom:2px solid var(--lg-red);}
+.ch h2{font-size:15px;font-weight:800;}
+.ci{width:30px;height:30px;background:var(--lg-red);color:white;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.sl{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--muted);margin-bottom:9px;margin-top:16px;text-transform:uppercase;}
+.sl:first-child{margin-top:0;}
+.wb{background:var(--hi);border-left:4px solid var(--warn);border-radius:0 8px 8px 0;padding:11px 14px;font-size:12.5px;line-height:1.7;margin-top:10px;}
+.wb strong{color:var(--warn);}
+.ib{background:var(--info-bg);border-left:4px solid var(--info);border-radius:0 8px 8px 0;padding:11px 14px;font-size:12.5px;line-height:1.7;margin-top:10px;}
+.ib strong{color:var(--info);}
+.ob{background:var(--ok-bg);border-left:4px solid var(--ok);border-radius:0 8px 8px 0;padding:11px 14px;font-size:12.5px;line-height:1.7;margin-top:10px;}
+.ob strong{color:var(--ok);}
+.rb{background:#FFF5F7;border-left:4px solid var(--lg-red);border-radius:0 8px 8px 0;padding:11px 14px;font-size:12.5px;line-height:1.7;margin-top:10px;}
+.rb strong{color:var(--lg-red);}
+.sb{background:#F1F8E9;border:1.5px dashed #558B2F;border-radius:10px;padding:12px 15px;margin-top:11px;font-size:13px;line-height:1.75;color:#2E4A12;}
+.sl2{font-size:11px;font-weight:700;color:#558B2F;letter-spacing:1px;margin-bottom:5px;}
+
+/* SPEC TABLE - vertical category */
+.spec-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.spec-tbl{border-collapse:separate;border-spacing:0;font-size:12px;border:1px solid var(--border);border-radius:10px;overflow:hidden;min-width:820px;width:100%;}
+.spec-tbl th{background:var(--lg-dark);color:white;padding:9px 7px;text-align:center;font-weight:700;font-size:11.5px;border-right:1px solid rgba(255,255,255,.1);vertical-align:middle;}
+.spec-tbl th:last-child{border-right:none;}
+.spec-tbl td{padding:8px 7px;border-bottom:1px solid #EEEEEE;border-right:1px solid #EEEEEE;text-align:center;vertical-align:middle;line-height:1.4;font-size:12px;}
+.spec-tbl td:last-child{border-right:none;}
+.spec-tbl tr:last-child td{border-bottom:none;}
+.spec-tbl .cat-cell{background:#F5F5F5;font-weight:800;font-size:11.5px;color:var(--lg-dark);text-align:center;vertical-align:middle;padding:6px 8px;border-right:1px solid #DDDDDD;border-bottom:1px solid #EEEEEE;min-width:52px;}
+.spec-tbl .feat-cell{text-align:left;padding-left:10px;font-weight:500;color:#333;min-width:120px;}
+.spec-tbl tr:nth-child(even) td{background:#FAFAFA;}
+.spec-tbl tr:nth-child(even) .cat-cell{background:#EFEFEF;}
+.ok{color:#2E7D32;font-size:14px;font-weight:900;}
+.ng{color:#BDBDBD;font-size:13px;}
+.ps{font-size:10.5px;color:#E65100;font-weight:700;}
+.grade{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;}
+.g1{background:#E8F5E9;color:#2E7D32;}.g2{background:#F3E5F5;color:#6A1B9A;}.g3{background:#FFF3E0;color:#E65100;}.g12{background:linear-gradient(90deg,#E8F5E9,#F3E5F5);color:#4A148C;}
+.yr{display:inline-block;padding:1px 6px;border-radius:8px;font-size:10px;font-weight:700;}
+.y26{background:#FCE4EC;color:#880E4F;}.y25{background:#EDE7F6;color:#4527A0;}
+
+/* INSTALL GRID */
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:13px;}
+.it{border:1.5px solid var(--border);border-radius:10px;overflow:hidden;}
+.ith{background:var(--lg-dark);color:white;padding:8px 13px;font-size:13px;font-weight:700;}
+.itb{padding:10px;}
+.ir{display:flex;justify-content:space-between;align-items:center;padding:6px 8px;border-radius:6px;margin-bottom:3px;background:#FAFAFA;font-size:12.5px;}
+.il{font-weight:600;color:var(--muted);}
+.iv{font-weight:700;color:var(--lg-red);}
+.in{background:#FFF8F8;border-left:3px solid var(--lg-red);border-radius:0 7px 7px 0;padding:9px 11px;font-size:12px;line-height:1.7;margin-top:9px;}
+.in li{margin-left:14px;margin-bottom:2px;}
+
+/* PIPE SECTION */
+.pipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pipe-card{border-radius:11px;padding:16px;border:2px solid;}
+.pc-gen{border-color:#78909C;background:#FAFBFC;}
+.pc-emb{border-color:#37474F;background:#F0F4F7;}
+.pipe-card h4{font-size:13px;font-weight:800;margin-bottom:9px;}
+.pc-gen h4{color:#455A64;}.pc-emb h4{color:#1C313A;}
+.pipe-tag{display:inline-block;padding:3px 9px;border-radius:11px;font-size:11px;font-weight:700;margin-bottom:8px;}
+.pt-g{background:#ECEFF1;color:#455A64;}.pt-e{background:#E8EAF6;color:#283593;}
+.pipe-card ul{padding-left:14px;font-size:12px;line-height:1.75;margin-top:8px;}
+.pipe-diff{background:white;border:1px solid var(--border);border-radius:9px;overflow:hidden;margin-top:14px;}
+.pd-row{display:flex;align-items:center;padding:7px 13px;border-bottom:1px solid #EEEEEE;font-size:12.5px;}
+.pd-row:last-child{border-bottom:none;}
+.pd-row:first-child{background:#F5F5F5;font-weight:700;font-size:12px;color:var(--muted);}
+.pd-label{min-width:80px;font-weight:700;color:var(--muted);}
+.pd-gen{flex:1;text-align:center;}
+.pd-emb{flex:1;text-align:center;}
+
+/* CARE SERVICE */
+.care-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:14px;}
+.care-p{border-radius:11px;border:2px solid var(--lg-red);background:#FFF5F7;padding:16px;}
+.care-l{border-radius:11px;border:2px solid #1976D2;background:#F0F7FF;padding:16px;}
+.care-p h3{font-size:14px;font-weight:800;color:var(--lg-red);margin-bottom:4px;}
+.care-l h3{font-size:14px;font-weight:800;color:#1565C0;margin-bottom:4px;}
+.care-sub{font-size:11px;color:var(--muted);margin-bottom:11px;}
+.care-item{display:flex;gap:7px;margin-bottom:7px;font-size:12.5px;align-items:flex-start;}
+.care-icon{font-size:15px;flex-shrink:0;}
+.cs-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-top:13px;width:100%;align-items:stretch;}
+.cs-card{background:var(--bg);border-radius:9px;padding:14px;border:1px solid var(--border);height:100%;min-width:0;box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-start;}
+.cs-card h4{font-size:12.5px;font-weight:700;margin-bottom:5px;color:var(--lg-dark);}
+.cs-card p{font-size:12px;color:#444;line-height:1.6;}
+.care-diff{background:white;border:1.5px solid var(--border);border-radius:10px;overflow:hidden;margin-top:14px;}
+.cd-hdr{display:grid;grid-template-columns:120px 1fr 1fr;background:var(--lg-dark);color:white;font-size:12px;font-weight:700;}
+.cd-hdr div,.cd-row div{padding:9px 12px;text-align:center;}
+.cd-row{display:grid;grid-template-columns:120px 1fr 1fr;border-bottom:1px solid #EEEEEE;font-size:12.5px;}
+.cd-row:last-child{border-bottom:none;}
+.cd-row div:first-child{background:#F5F5F5;font-weight:700;font-size:12px;color:var(--muted);text-align:left;padding-left:13px;}
+
+/* COST TABLE */
+.tw{overflow-x:auto;max-width:100%;}
+.ct{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.ct th{background:var(--lg-dark);color:white;padding:9px 10px;text-align:center;font-weight:700;font-size:12px;border-right:1px solid rgba(255,255,255,.1);}
+.ct th:last-child{border-right:none;}
+.ct td{padding:8px 10px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);vertical-align:middle;line-height:1.5;}
+.ct td:last-child{border-right:none;}
+.ct tr:last-child td{border-bottom:none;}
+.ct tr:nth-child(even) td{background:#FAFAFA;}
+.ct .cat td{background:#F0F0F0;font-weight:700;font-size:12px;color:var(--lg-dark);border-bottom:1px solid #D0D0D0;}
+.ca{font-weight:700;color:var(--lg-red);text-align:center;white-space:nowrap;}
+.cu{color:var(--muted);font-size:11px;text-align:center;}
+.cn{font-size:11px;color:#555;line-height:1.5;}
+.sub{padding-left:16px;color:var(--muted);}
+
+/* Q&A */
+.qa{margin-bottom:20px;}
+.qq{font-size:13.5px;font-weight:800;color:var(--lg-red);margin-bottom:7px;display:flex;gap:7px;align-items:flex-start;}
+.qq::before{content:"Q";background:var(--lg-red);color:white;font-size:10.5px;font-weight:800;width:19px;height:19px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+
+/* PHASE */
+.ph-box{display:grid;grid-template-columns:1fr auto 1fr;border-radius:11px;overflow:hidden;border:1px solid var(--border);}
+.ph-side{padding:16px;background:white;}
+.ph-side h4{font-size:13px;font-weight:800;margin-bottom:7px;}
+.ph-side ul{list-style:none;font-size:12px;line-height:1.8;}
+.ph-div{background:var(--lg-dark);color:white;font-size:17px;font-weight:900;padding:18px 12px;display:flex;align-items:center;justify-content:center;}
+
+/* MISC */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:13px;}
+.ii{background:var(--bg);border-radius:9px;padding:14px;border-left:4px solid var(--info);}
+.ii h4{font-size:13px;font-weight:700;color:var(--info);margin-bottom:6px;}
+.ii p,.ii li{font-size:12.5px;color:#333;line-height:1.65;}
+.ii ul{padding-left:14px;}
+.fn{font-size:11px;color:var(--muted);line-height:1.7;margin-top:9px;padding-top:9px;border-top:1px solid var(--border);}
+.fn li{margin-left:14px;margin-bottom:2px;}
+.e-bars{display:flex;flex-direction:column;gap:5px;margin-top:10px;}
+.e-row{display:flex;align-items:center;gap:7px;font-size:12.5px;}
+.eg{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:white;flex-shrink:0;}
+.eb{flex:1;height:21px;border-radius:4px;display:flex;align-items:center;padding-left:8px;font-size:11px;font-weight:600;color:white;}
+.er{font-size:11px;font-weight:700;padding:2px 7px;border-radius:9px;}
+.er-g{background:#E8F5E9;color:#2E7D32;}.er-n{background:#F5F5F5;color:#999;}
+img{max-width:100%;}
+@media(max-width:920px){
+  .cs-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:680px){
+  .two-col,.pipe-grid,.care-grid,.ig,.cs-grid{grid-template-columns:1fr;}
+  .three-col{grid-template-columns:1fr;}
+  .ph-box{grid-template-columns:1fr;}
+  .ph-div{padding:9px;}
+}
+
+
+/* POLISH */
+.card{margin-bottom:18px;}
+.cs-grid{gap:14px;}
+.cs-card{padding:15px;}
+.cs-card h4{min-height:34px;display:flex;align-items:flex-start;line-height:1.45;}
+.cs-card p + p{margin-top:8px;}
+.cs-card p:last-child{margin-bottom:0;}
+.section-image{margin-top:18px;padding:14px;background:#FFFFFF;border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 8px rgba(0,0,0,.04);}
+.section-image img{display:block;width:100%;max-width:980px;margin:0 auto;border-radius:10px;border:1px solid #E6E6E6;image-rendering:auto;}
+.img-caption{font-size:11.5px;color:var(--muted);text-align:center;margin-top:9px;line-height:1.55;}
+@media (max-width:768px){
+  .section-image{padding:10px;}
+  .img-caption{font-size:11px;}
+}
+
+
+/* OFFICIAL LG IMAGE SECTIONS */
+.official-section{margin-top:18px;padding:16px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 8px rgba(0,0,0,.04);}
+.official-section-title{font-size:13.5px;font-weight:900;color:var(--lg-dark);margin-bottom:12px;display:flex;align-items:center;gap:7px;}
+.official-note{font-size:11.5px;color:var(--muted);line-height:1.6;margin-top:10px;text-align:center;}
+.official-group{margin-top:16px;}
+.official-group:first-of-type{margin-top:0;}
+.official-group-title{font-size:12px;font-weight:800;color:#333;margin-bottom:9px;padding-left:9px;border-left:4px solid var(--lg-red);line-height:1.5;}
+.official-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+.official-grid.grid-5{grid-template-columns:repeat(5,minmax(0,1fr));}
+.official-img-card{background:#FAFAFA;border:1px solid #E6E6E6;border-radius:10px;overflow:hidden;min-width:0;}
+.official-img-card img{display:block;width:100%;height:auto;max-width:100%;background:#f5f5f5;}
+.official-img-label{font-size:11.5px;font-weight:800;color:#333;padding:8px 10px;line-height:1.45;background:#fff;border-top:1px solid #eee;}
+.official-care-split{display:grid;grid-template-columns:1fr;gap:18px;}
+@media(max-width:960px){.official-grid.grid-5{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(max-width:680px){.official-grid,.official-grid.grid-5{grid-template-columns:1fr 1fr;gap:9px;}.official-section{padding:11px;}.official-img-label{font-size:11px;padding:7px 8px;}}
+@media(max-width:430px){.official-grid,.official-grid.grid-5{grid-template-columns:1fr;}}
+
+.official-desc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.official-desc-grid.care-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+.official-desc-card{background:#FAFAFA;border:1px solid #E6E6E6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;min-width:0;}
+.official-desc-card img{display:block;width:100%;height:auto;background:#f5f5f5;}
+.official-desc-body{padding:11px 12px 13px;}
+.official-desc-title{font-size:12.5px;font-weight:800;color:var(--lg-dark);margin-bottom:6px;line-height:1.45;}
+.official-desc-text{font-size:11.5px;color:#555;line-height:1.65;word-break:keep-all;}
+.official-mini-note{font-size:11px;color:var(--muted);line-height:1.55;margin-top:8px;}
+@media(max-width:960px){.official-desc-grid.care-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:680px){.official-desc-grid,.official-desc-grid.care-grid{grid-template-columns:1fr;gap:10px;}.official-desc-body{padding:10px 11px 12px;}.official-desc-title{font-size:12px;}.official-desc-text{font-size:11px;}}
+
+</style>
+</head>
+<body>
+<div class="hdr">
+<div class="hdr-inner">
+<div class="hdr-top">
+<div style="display:flex;align-items:center;gap:11px;">
+<div class="logo">LG</div>
+<div class="ht">
+<h1>LG전자 에어컨 상담 가이드</h1>
+<p>제품 라인업 · 설치안내 · 추가설치비 · 케어서비스 통합 참고자료 | 2026년 기준</p>
+</div>
+</div>
+<a class="hdr-link" href="https://www.lge.co.kr/sch?keyword=LG%EC%A0%84%EC%9E%90+%EC%97%90%EC%96%B4%EC%BB%A8&amp;tab=support" target="_blank">🔗 LG 공식 FAQ</a>
+</div>
+<div class="tabs">
+<button class="tab active" onclick="T('lineup',this)">📋 제품 라인업</button>
+<button class="tab" onclick="T('basic',this)">🔧 기본 설치 안내</button>
+<button class="tab" onclick="T('cost',this)">💰 추가설치비용</button>
+<button class="tab" onclick="T('care',this)">🧹 케어서비스</button>
+<button class="tab" onclick="T('tip',this)">💬 상담 팁</button>
+</div>
+</div>
+</div>
+<div class="content">
+<!-- ===== TAB 1: 제품 라인업 ===== -->
+<div class="tab-panel active" id="tab-lineup">
+<div class="card">
+<div class="ch"><div class="ci">🏠</div><h2>스탠드 에어컨 라인업 — 스펙 비교</h2></div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<thead>
+<tr>
+<th colspan="2">구분</th>
+<th>타워I<br/><small>9시리즈</small><br/><span class="yr y26">2026</span></th>
+<th>타워I<br/><small>7시리즈</small><br/><span class="yr y26">2026</span></th>
+<th>타워I<br/><small>5시리즈</small><br/><span class="yr y26">2026</span></th>
+<th>뷰 프로<br/><small>6시리즈</small><br/><span class="yr y26">2026</span></th>
+<th>뷰 프로<br/><small>5시리즈</small><br/><span class="yr y26">2026</span></th>
+<th>뷰I<br/><small>3시리즈</small><br/><span class="yr y25">2025</span></th>
+<th>뷰II<br/><small>1,2시리즈</small><br/><span class="yr y25">2025</span></th>
+<th>쿨<br/><small>2,1시리즈</small><br/><span class="yr y25">2025</span></th>
+<th>사계절<br/><small>냉난방</small><br/><span class="yr y25">2025</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cat-cell" rowspan="4">AI<br/>특화<br/>기능</td>
+<td class="feat-cell">레이더 센서<br/><small style="color:#999;">(외출절전/홈모니터링)</small></td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+<td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="feat-cell">AI 골드프리</td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ng">✕</span></td>
+<td><span class="ps">모델별 상이</span></td><td><span class="ng">✕</span></td>
+<td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="feat-cell">AI 수면</td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+<td><span class="ok">○</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="feat-cell">AI 음성인식</td>
+<td><span class="ps">본체/리모컨</span></td><td><span class="ps">본체/리모컨</span></td><td><span class="ps">본체/리모컨</span></td>
+<td><span class="ps">리모컨</span></td><td><span class="ps">리모컨</span></td>
+<td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="cat-cell" rowspan="2">냉방</td>
+<td class="feat-cell">AI 바람</td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+<td><span class="ps">○ (공간분석)</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+</tr>
+<tr>
+<td class="feat-cell">소프트 바람</td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="cat-cell" rowspan="3">AI<br/>청정<br/>관리</td>
+<td class="feat-cell">필터 클린봇</td>
+<td><span class="ok">○</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+<td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+<td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="feat-cell">알러지케어<br/>공기청정 필터</td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ng">✕</span></td>
+<td><span class="ok">○</span></td><td><span class="ng">✕</span></td>
+<td><span class="ng">✕</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="feat-cell">UV-LED 멸살균</td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+<td><span class="ps">모델별 상이</span></td><td><span class="ps">모델별 상이</span></td>
+<td><span class="ps">모델별 상이</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="cat-cell">공기<br/>청정</td>
+<td class="feat-cell">공기청정</td>
+<td><span class="ps">○ PM1.0</span></td><td><span class="ps">○ PM1.0</span></td><td><span class="ng">✕</span></td>
+<td><span class="ok">○</span></td><td><span class="ng">✕</span></td>
+<td><span class="ng">✕</span></td><td><span class="ps">모델별 상이</span></td><td><span class="ps">모델별 상이</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="cat-cell">셀프<br/>청정</td>
+<td class="feat-cell">셀프청정/클린뷰/<br/>쿨오존</td>
+<td style="font-size:11px;font-weight:600;">셀프청정</td><td style="font-size:11px;font-weight:600;">셀프청정</td><td style="font-size:11px;font-weight:600;">셀프청정</td>
+<td style="font-size:11px;font-weight:600;">클린뷰</td><td style="font-size:11px;font-weight:600;">클린뷰</td>
+<td style="font-size:11px;font-weight:600;">클린뷰</td><td style="font-size:11px;font-weight:600;">클린뷰</td><td style="font-size:11px;font-weight:600;">쿨오존</td><td style="font-size:11px;font-weight:600;">쿨오존</td>
+</tr>
+<tr>
+<td class="cat-cell">에너지<br/>등급</td>
+<td class="feat-cell">에너지등급</td>
+<td><span class="grade g12">1/2등급</span><br/><span style="font-size:10px;color:#999;">모델별 상이</span></td>
+<td><span class="grade g2">2등급</span></td>
+<td><span class="grade g2">2등급</span></td>
+<td><span class="grade g12">1/2등급</span><br/><span style="font-size:10px;color:#999;">모델별 상이</span></td>
+<td><span class="grade g2">2등급</span></td>
+<td><span class="grade g12">1/2등급</span><br/><span style="font-size:10px;color:#999;">모델별 상이</span></td>
+<td><span class="grade g3">3등급</span></td>
+<td><span class="grade g3">3등급</span></td>
+<td><span class="grade g3">3등급</span></td>
+</tr>
+<tr>
+<td class="cat-cell" rowspan="3">디자인</td>
+<td class="feat-cell">색상</td>
+<td colspan="3" style="font-size:11px;">카밍베이지/크림화이트</td>
+<td colspan="2" style="font-size:11px;">에센스화이트/카밍베이지</td>
+<td style="font-size:11px;">에센스화이트/카밍베이지</td>
+<td style="font-size:11px;">에센스화이트/카밍베이지</td>
+<td style="font-size:11px;">에센스화이트</td>
+<td style="font-size:11px;">에센스화이트</td>
+</tr>
+<tr>
+<td class="feat-cell">뷰케이스 (별매)</td>
+<td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="feat-cell">토출구 커버 자동개폐</td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+<td><span class="ok">○</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="cat-cell">출시<br/>년도</td>
+<td class="feat-cell">출시년도</td>
+<td colspan="5" style="font-size:12px;font-weight:700;color:#880E4F;">2026년</td>
+<td colspan="4" style="font-size:12px;font-weight:700;color:#4527A0;">2025년</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wb" style="margin-top:12px;">
+<strong>📌 라인 선택 기준:</strong> 타워I = AI 풀옵션 프리미엄 | 뷰프로 = AI 인테리어형 | 뷰I(3시리즈) = AI 중급 인테리어 | 뷰II = 가성비 실용형 | 쿨 = 심플 베이직 | 사계절 = 냉난방 겸용 필요 고객
+</div>
+<div class="sl" style="margin-top:20px;">AI 기능 설명</div>
+<div class="three-col">
+<div class="ii" style="border-left-color:var(--lg-red);"><h4>🤖 AI 바람</h4><p>레이더 센서가 사람 위치·실내 온도 감지 → 바람 방향·세기 자동 조절. 직접 바람 닿지 않도록 스스로 제어</p></div>
+<div class="ii" style="border-left-color:#3949AB;"><h4>✨ AI 골드프리</h4><p>외출 감지 시 자동 절전 모드 전환. 사람 없으면 에너지 절약 운전으로 전기료 절감</p></div>
+<div class="ii" style="border-left-color:#1565C0;"><h4>😴 AI 수면</h4><p>수면 중 체온 변화 감지 → 온도 자동 조절. 쾌적한 수면 환경 유지</p></div>
+<div class="ii" style="border-left-color:#558B2F;"><h4>🎤 AI 음성인식</h4><p>"하이 LG, 전원 켜줘" 등 음성 명령 제어. 모델별 본체/리모컨 방식 상이</p></div>
+<div class="ii" style="border-left-color:#E65100;"><h4>🦠 UV-LED 멸살균</h4><p>자외선 LED로 필터·열교환기 세균·바이러스 억제. 상위 모델에 탑재 (모델별 상이)</p></div>
+<div class="ii" style="border-left-color:#6A1B9A;"><h4>💨 소프트 바람</h4><p>냉기를 부드럽게 분산시켜 직접 찬바람 없이 공간 전체를 시원하게 유지</p></div>
+</div>
+</div>
+<!-- 벽걸이 -->
+<div class="card">
+<div class="ch"><div class="ci">🌬</div><h2>벽걸이 에어컨 라인업 — 스펙 비교</h2></div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<thead>
+<tr>
+<th colspan="2">구분</th>
+<th>듀얼쿨<br/><small>냉방 프리미엄</small></th>
+<th>듀얼쿨<br/>사계절</th>
+<th>일반<br/><small>냉방</small></th>
+<th>일반<br/>사계절</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cat-cell" rowspan="5">AI<br/>특화<br/>기능</td>
+<td class="feat-cell">레이더 센서</td>
+<td><span class="ps">모델별 상이</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="feat-cell">AI 골드프리</td>
+<td><span class="ok">○</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="feat-cell">AI 수면</td>
+<td><span class="ok">○</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="feat-cell">AI 음성인식</td>
+<td><span class="ps">리모컨</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="feat-cell">AI 바람</td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="cat-cell" rowspan="3">냉방/<br/>난방</td>
+<td class="feat-cell">소프트 바람</td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ng">✕</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="feat-cell">아이스쿨파워</td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+</tr>
+<tr>
+<td class="feat-cell">온풍 난방</td>
+<td><span class="ng">✕</span></td><td><span class="ok">○</span></td><td><span class="ng">✕</span></td><td><span class="ok">○</span></td>
+</tr>
+<tr>
+<td class="cat-cell" rowspan="3">청정<br/>관리</td>
+<td class="feat-cell">UV-LED 멸살균</td>
+<td><span class="ok">○</span></td><td><span class="ng">✕</span></td><td><span class="ps">모델별 상이</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="feat-cell">AI 건조</td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td>
+</tr>
+<tr>
+<td class="feat-cell">올클리닝</td>
+<td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ok">○</span></td><td><span class="ng">✕</span></td>
+</tr>
+<tr>
+<td class="cat-cell">에너지<br/>등급</td>
+<td class="feat-cell">에너지등급</td>
+<td><span class="grade g12">1/2등급</span></td><td><span class="grade g1">1등급</span></td>
+<td><span class="ps">모델별 상이</span></td><td><span class="ps">모델별 상이</span></td>
+</tr>
+<tr>
+<td class="cat-cell">출시<br/>년도</td>
+<td class="feat-cell">출시년도</td>
+<td colspan="4" style="font-size:12px;color:var(--muted);">모델별 상이</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wb" style="margin-top:12px;"><strong>🔴 냉방/냉난방 혼동 주의!</strong> 듀얼쿨 = 냉방 전용 / 듀얼쿨 사계절 = 냉난방 겸용. 상담 마지막에 반드시 접수된 제품 재확인.</div>
+</div>
+<!-- ===== 5월 LG 헬스케어몰 렌탈 라인업 ===== -->
+<div class="card">
+<div class="ch"><div class="ci">📦</div><h2>5월 LG 헬스케어몰 렌탈 운영 모델 — 제품 카탈로그</h2></div>
+<div class="rb">
+<strong>📌 안내:</strong> 가격·수수료·계약기간 정보는 별도 자료를 참고해 주세요.<br/>
+  아래 모델은 <strong>5월 기준</strong>으로 대략적인 모델명을 보실 수 있도록 정리해놓은 것이며, 실제 운영 중이거나 재고 현황과는 차이가 있을 수 있습니다. 반드시 <strong>최신 엑셀 파일을 참고해서 상담</strong> 부탁드립니다.
+</div>
+<!-- 벽걸이 -->
+<div class="sl" style="margin-top:14px;">📌 벽걸이 (싱글) — SQ / SW(Whisen) 시리즈</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:60px"/><col style="width:200px"/><col style="width:auto"/></colgroup>
+<thead>
+<tr>
+<th style="background:var(--lg-dark);">평형</th>
+<th style="background:var(--lg-dark);">모델명</th>
+<th style="background:var(--lg-dark);">시리즈</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>6평</td><td>SQ06GJ1WES</td><td>SQ J 라인</td></tr>
+<tr><td>7평</td><td>SQ07GA3WBS</td><td>SQ A3 / 보급형</td></tr>
+<tr><td>7평</td><td>SQ07GJ3WES</td><td>SQ J3</td></tr>
+<tr><td>7평</td><td>SQ07GS7EAS</td><td>SQ S7</td></tr>
+<tr><td>7평</td><td>SQ07GS8EAS</td><td>SQ S8</td></tr>
+<tr><td>7평</td><td>SQ07GS9EES</td><td>SQ S9 / 상위형</td></tr>
+<tr><td>7평</td><td>SW07FK1WBS</td><td>Whisen F 라인</td></tr>
+<tr><td>7평</td><td>SW07GJ1WAS</td><td>Whisen J</td></tr>
+<tr><td>7평</td><td>SW07GK1WES</td><td>Whisen K / 프리미엄</td></tr>
+<tr><td>9평</td><td>SQ09EK1WES</td><td>SQ EK 라인</td></tr>
+<tr><td>9평</td><td>SQ09GJ1WAS</td><td>SQ GJ</td></tr>
+<tr><td>9평</td><td>SQ09GK1WES</td><td>SQ GK</td></tr>
+<tr><td>9평</td><td>SW09FS1EES</td><td>Whisen FS 라인</td></tr>
+<tr><td>9평</td><td>SW09GK1WAS</td><td>Whisen GK</td></tr>
+<tr><td>11평</td><td>SQ11EK1WES</td><td>SQ EK 11평</td></tr>
+<tr><td>11평</td><td>SQ11GK1WES</td><td>SQ GK 11평</td></tr>
+<tr><td>11평</td><td>SW11GK1WAS</td><td>Whisen GK 11평</td></tr>
+<tr><td>13평</td><td>SQ13EK1WAS</td><td>SQ EK 13평</td></tr>
+<tr><td>13평</td><td>SQ13GK1WAS</td><td>SQ GK 13평</td></tr>
+<tr><td>13평</td><td>SW13GK1WAS</td><td>Whisen GK 13평</td></tr>
+<tr><td>16평</td><td>SQ16EK1WAS</td><td>SQ EK 16평</td></tr>
+<tr><td>16평</td><td>SQ16GK1WAS</td><td>SQ GK 16평</td></tr>
+<tr><td>16평</td><td>SW16FK1WBS</td><td>Whisen FK 16평</td></tr>
+</tbody>
+</table>
+</div>
+<!-- 쿨 시리즈 -->
+<div class="sl" style="margin-top:18px;">📌 쿨 시리즈 — 보급형 16~20평 (싱글 / 2in1 / 냉난방 포함)</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:150px"/><col style="width:70px"/><col style="width:180px"/><col style="width:70px"/></colgroup>
+<thead>
+<tr>
+<th style="background:var(--lg-dark);">시리즈</th>
+<th style="background:var(--lg-dark);">설치</th>
+<th style="background:var(--lg-dark);">모델명</th>
+<th style="background:var(--lg-dark);">평형</th>
+</tr>
+</thead>
+<tbody>
+<tr><td rowspan="2">쿨 1 냉난방</td><td>2in1</td><td>FW16FC1EA2</td><td>16평</td></tr>
+<tr><td>스탠드</td><td>FW16FC1EA1</td><td>16평</td></tr>
+<tr><td rowspan="2">쿨 1 커버</td><td>2in1</td><td>FQ18GC1EU2</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ18GC1EU1</td><td>18평</td></tr>
+<tr><td rowspan="2">쿨 1 커버 냉난방</td><td>2in1</td><td>FW16FC1EU2</td><td>16평</td></tr>
+<tr><td>스탠드</td><td>FW16FC1EU1</td><td>16평</td></tr>
+<tr><td rowspan="2">쿨 2</td><td>2in1</td><td>FQ20GC2EA2</td><td>20평</td></tr>
+<tr><td>싱글</td><td>FQ20GC2EA1</td><td>20평</td></tr>
+<tr><td rowspan="2">쿨 2 커버</td><td>2in1</td><td>FQ18GC2EU2</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ18GC2EU1</td><td>18평</td></tr>
+<tr><td rowspan="2">쿨프로 3</td><td>2in1</td><td>FQ18GC3EA2</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ18GC3EA1</td><td>18평</td></tr>
+<tr><td rowspan="2">쿨프로 4</td><td>2in1</td><td>FQ18GC4EA2</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ18GC4EA1</td><td>18평</td></tr>
+</tbody>
+</table>
+</div>
+<!-- 뷰 시리즈 -->
+<div class="sl" style="margin-top:18px;">📌 뷰 시리즈 — 디스플레이 탑재 프리미엄 (뷰1 / 뷰1프로 / 뷰2)</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:150px"/><col style="width:70px"/><col style="width:220px"/><col style="width:70px"/></colgroup>
+<thead>
+<tr>
+<th style="background:var(--lg-dark);">시리즈</th>
+<th style="background:var(--lg-dark);">설치</th>
+<th style="background:var(--lg-dark);">모델명</th>
+<th style="background:var(--lg-dark);">평형</th>
+</tr>
+</thead>
+<tbody>
+<tr><td rowspan="6">뷰1 3시리즈</td><td>2in1</td><td>FQ18GV3EE2</td><td>18평</td></tr>
+<tr><td>2in1</td><td>FQ22GV3EA2</td><td>22평</td></tr>
+<tr><td>2in1</td><td>FQ18GV3EA2 / BA2</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ18GV3EE1</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ22GV3EA1</td><td>22평</td></tr>
+<tr><td>싱글</td><td>FQ18GV3EA1 / BA1</td><td>18평</td></tr>
+<tr><td rowspan="2">뷰1 4시리즈</td><td>2in1</td><td>FQ18GV4EA2</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ18GV4EA1</td><td>18평</td></tr>
+<tr><td rowspan="4">뷰1프로 5시리즈</td><td>2in1</td><td>FQ18GV5EA2</td><td>18평</td></tr>
+<tr><td>2in1</td><td>FQ18GV5BA2</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ18GV5EA1</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ18GV5BA1</td><td>18평</td></tr>
+<tr><td rowspan="6">뷰1프로 6시리즈</td><td>2in1</td><td>FQ18GV6EE2</td><td>18평</td></tr>
+<tr><td>2in1</td><td>FQ22GV6EA2</td><td>22평</td></tr>
+<tr><td>2in1</td><td>FQ18GV6EA2 / BA2</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ18GV6EE1</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ22GV6EA1</td><td>22평</td></tr>
+<tr><td>싱글</td><td>FQ18GV6EA1 / BA1</td><td>18평</td></tr>
+<tr><td rowspan="2">뷰2 1시리즈</td><td>2in1</td><td>FQ18GU1EA2</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ18GU1EA1</td><td>18평</td></tr>
+<tr><td rowspan="4">뷰2 2시리즈</td><td>2in1</td><td>FQ22GU2EA2</td><td>22평</td></tr>
+<tr><td>2in1</td><td>FQ18GU2EA2</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ22GU2EA1</td><td>22평</td></tr>
+<tr><td>싱글</td><td>FQ18GU2EA1</td><td>18평</td></tr>
+</tbody>
+</table>
+</div>
+<!-- 타워 시리즈 -->
+<div class="sl" style="margin-top:18px;">📌 타워1 시리즈 — 타워형 디자인 최상위 (5 / 7 / 9시리즈)</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:150px"/><col style="width:70px"/><col style="width:220px"/><col style="width:90px"/></colgroup>
+<thead>
+<tr>
+<th style="background:var(--lg-dark);">시리즈</th>
+<th style="background:var(--lg-dark);">설치</th>
+<th style="background:var(--lg-dark);">모델명</th>
+<th style="background:var(--lg-dark);">평형</th>
+</tr>
+</thead>
+<tbody>
+<tr><td rowspan="4">타워1 5시리즈</td><td>2in1</td><td>FQ18GN5BA2 / HA2</td><td>18평</td></tr>
+<tr><td>2in1</td><td>FQ25FN5BA2 / HA2</td><td>25평</td></tr>
+<tr><td>싱글</td><td>FQ18GN5BA1 / HA1</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ25FN5BA1 / HA1</td><td>25평</td></tr>
+<tr><td rowspan="2">타워1 7시리즈</td><td>2in1</td><td>FQ18GN7BA2 / HA2</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ18GN7BA1 / HA1</td><td>18평</td></tr>
+<tr><td rowspan="6">타워1 9시리즈<br/><small>(최상위)</small></td><td>2in1</td><td>FQ25GN9BE2 / HE2</td><td>25평</td></tr>
+<tr><td>2in1</td><td>FQ22GN9BE2 / HE2</td><td>22평</td></tr>
+<tr><td>2in1</td><td>FQ18GN9BE2 / HE2</td><td>18평</td></tr>
+<tr><td>2in1</td><td>FQ18GN9BA2 / HA2</td><td>18평</td></tr>
+<tr><td>싱글</td><td>FQ25GN9BE1 / HE1<br/>FQ22GN9BE1 / HE1<br/>FQ18GN9BE1 / HE1</td><td>18·22·25평</td></tr>
+<tr><td>싱글</td><td>FQ18GN9BA1 / HA1</td><td>18평</td></tr>
+</tbody>
+</table>
+</div>
+<!-- 사계절 -->
+<div class="sl" style="margin-top:18px;">📌 사계절 (냉난방) — 16~20평</div>
+<div class="spec-wrap">
+<table class="spec-tbl">
+<colgroup><col style="width:170px"/><col style="width:70px"/><col style="width:180px"/><col style="width:70px"/></colgroup>
+<thead>
+<tr>
+<th style="background:var(--lg-dark);">시리즈</th>
+<th style="background:var(--lg-dark);">설치</th>
+<th style="background:var(--lg-dark);">모델명</th>
+<th style="background:var(--lg-dark);">평형</th>
+</tr>
+</thead>
+<tbody>
+<tr><td rowspan="2">사계절 위너 16평</td><td>스탠드</td><td>FW18EV3EA1</td><td>16평</td></tr>
+<tr><td>스탠드</td><td>FW16HDWWA1</td><td>16평</td></tr>
+<tr><td>사계절 타워2 스페셜</td><td>2in1</td><td>FW19SETBA2</td><td>19평</td></tr>
+<tr><td>사계절 타워히트</td><td>2in1</td><td>FW20HDNBM2</td><td>20평</td></tr>
+</tbody>
+</table>
+</div>
+<div class="fn"><ul>
+<li><strong>SQ vs SW(Whisen) 벽걸이:</strong> SW(Whisen) 라인이 SQ보다 상위 라인. 같은 평형에서도 기능 차이 있음</li>
+<li><strong>모델명 끝자리 코드:</strong> EE/EA/BA/HA/HE/BE = 색상·옵션 구분 (EE/HA = 화이트 계열, BA = 베이지, BE/HE = 다크 계열 등)</li>
+<li><strong>2in1 vs 싱글:</strong> 2in1 = 스탠드 + 벽걸이(주로 6평) 콤보 / 싱글 = 스탠드 단독</li>
+<li><strong>스탠드 vs 2in1 (사계절):</strong> 사계절 위너 = 스탠드 단독 / 사계절 타워2·타워히트 = 2in1 콤보</li>
+</ul></div>
+</div>
+</div>
+<!-- ===== TAB 2: 기본 설치 ===== -->
+<div class="tab-panel" id="tab-basic">
+<!-- 기본 배관 기준 -->
+<div class="card">
+<div class="ch"><div class="ci">📦</div><h2>기본 배관 제공 기준</h2></div>
+<div class="ig">
+<div class="it">
+<div class="ith">단품 (Single)</div>
+<div class="itb">
+<div class="ir"><span class="il">🪟 벽걸이</span><span class="iv">기본배관 5M</span></div>
+<div class="ir"><span class="il">🏠 스탠드</span><span class="iv">기본배관 8M</span></div>
+<div class="ir"><span class="il">🏗 매립형</span><span class="iv">기본배관 3M</span></div>
+<div class="in"><ul><li>단품 기준 <strong>타공 2회까지 무상</strong></li><li>추가 시 회당 10,000원 발생</li><li>내력벽(하중 지지벽) → 타공 불가</li></ul></div>
+</div>
+</div>
+<div class="it">
+<div class="ith">2in1 (Multi)</div>
+<div class="itb">
+<div class="ir"><span class="il">🪟 벽걸이</span><span class="iv">기본배관 7.5M</span></div>
+<div class="ir"><span class="il">🏠 스탠드</span><span class="iv">기본배관 8M</span></div>
+<div class="ir"><span class="il">🏗 매립형</span><span class="iv">기본배관 3M</span></div>
+<div class="in"><ul><li>2in1 기준 <strong>타공 3회까지 무상</strong></li><li>추가 시 회당 10,000원 발생</li><li>내력벽(하중 지지벽) → 타공 불가</li></ul></div>
+</div>
+</div>
+</div>
+<div class="wb"><strong>⚠ 필수 고지:</strong> 매립배관형이 아닌 상품에서 매립배관 작업 시 기본배관 없이 추가비용 발생 / 재설치 시 배관 재사용 불가 → 별도 배관 비용 발생</div>
+</div>
+<!-- 기존 제품 철거비 안내 -->
+<div class="card">
+<div class="ch"><div class="ci">🗑️</div><h2>기존 제품 철거비 안내</h2></div>
+<div class="two-col" style="margin-bottom:12px;">
+<div class="it">
+<div class="ith" style="background:#37474F;">🏠 스탠드 에어컨 철거</div>
+<div class="itb">
+<div class="ir"><span class="il">철거비</span><span class="iv" style="font-size:16px;">40,000원</span></div>
+</div>
+</div>
+<div class="it">
+<div class="ith" style="background:#455A64;">🪟 벽걸이 에어컨 철거</div>
+<div class="itb">
+<div class="ir"><span class="il">철거비</span><span class="iv" style="font-size:16px;">20,000원</span></div>
+</div>
+</div>
+</div>
+<div class="ob" style="margin-bottom:10px;">
+<strong>✅ 아래 세 가지에 모두 해당되는 경우 철거비가 발생하지 않습니다</strong>
+<ol style="padding-left:18px;margin-top:7px;font-size:12.5px;line-height:1.9;">
+<li><strong>같은 자리 설치:</strong> 기존 제품이 철거되는 자리와 신규 제품이 설치되는 자리가 같을 경우 (같은 방의 같은 자리)</li>
+<li><strong>동일 제품 유형:</strong> 철거되는 제품과 설치되는 제품이 동일한 유형일 경우 <span style="color:#888;">(스탠드 / 벽걸이 / 실외기)</span></li>
+<li><strong>기사 회수·폐기:</strong> 철거한 제품을 설치 기사가 회수 또는 폐기 처리할 경우 <span style="color:#A50034;">(고객 보관 시 유상)</span></li>
+</ol>
+</div>
+<div class="ib"><strong>📞 문의:</strong> 자세한 상담이 필요하시다면 고객센터 <strong>1544-7777</strong>로 연락해 주세요.</div>
+</div>
+<!-- 일반배관 vs 매립배관 -->
+<div class="card">
+<div class="ch"><div class="ci">🔩</div><h2>일반배관 vs 매립배관 — 먼저 확인하세요</h2></div>
+<div class="rb">
+<strong>📌 상담 및 접수 시, 일반배관인지 매립배관인지 꼭 확인하고 접수 넣어주세요.</strong><br/>
+  배관 형태에 따라 주문하는 모델명이 달라지므로, 설치 기사님과 배관 종류를 먼저 확인하세요.
+</div>
+<div class="pipe-grid" style="margin-top:16px;">
+<div class="pipe-card pc-gen">
+<div class="pipe-tag pt-g">🔧 일반배관 (노출배관)</div>
+<ul>
+<li>배관이 벽 바깥으로 보이는 방식</li>
+<li>실외기와 배관을 타고 나오는 형태</li>
+<li>커버(덕트)로 마감하여 미관 처리</li>
+<li><strong>LG 기준:</strong> 벽걸이 5M / 스탠드 8M 기본 제공</li>
+<li>이전설치 시 일부 재사용 가능</li>
+</ul>
+<div style="margin-top:9px;font-size:12px;color:#455A64;background:#ECEFF1;border-radius:6px;padding:7px;">
+<strong>표기:</strong> 상품명에 별도 표기 없음<br/>
+<strong>실외기 연결:</strong> 타공 2~3회 필요
+    </div>
+</div>
+<div class="pipe-card pc-emb">
+<div class="pipe-tag pt-e">🏗 매립배관 (선매립)</div>
+<ul>
+<li>벽 안에 배관이 미리 설치된 방식</li>
+<li>신축 아파트에 대부분 설치됨</li>
+<li>인테리어가 깔끔하고 미관 우수</li>
+<li><strong>LG 기준:</strong> 기본배관 3M 포함</li>
+<li>재설치·이전 시 배관 재사용 불가 → 추가비</li>
+<li>매립배관 세척 작업 별도 필요 (50,000원~)</li>
+</ul>
+<div style="margin-top:9px;font-size:12px;color:#283593;background:#E8EAF6;border-radius:6px;padding:7px;">
+<strong>표기:</strong> 상품명 우측에 "매립배관" 표기됨<br/>
+<strong>실외기 연결:</strong> 벽 타공 없이 연결
+    </div>
+</div>
+</div>
+<div class="pipe-diff">
+<div class="pd-row"><div class="pd-label">구분</div><div class="pd-gen" style="color:#455A64;font-weight:700;">일반배관</div><div class="pd-emb" style="color:#283593;font-weight:700;">매립배관</div></div>
+<div class="pd-row"><div class="pd-label">배관 위치</div><div class="pd-gen">외부 노출</div><div class="pd-emb">벽 속 내부 매립</div></div>
+<div class="pd-row"><div class="pd-label">기본 배관</div><div class="pd-gen">벽걸이 5M / 스탠드 8M</div><div class="pd-emb">3M</div></div>
+<div class="pd-row"><div class="pd-label">이전 시</div><div class="pd-gen">일부 재사용 가능</div><div class="pd-emb" style="color:var(--lg-red);font-weight:700;">재사용 불가 → 추가비</div></div>
+<div class="pd-row"><div class="pd-label">세척 작업</div><div class="pd-gen">불필요</div><div class="pd-emb" style="color:var(--lg-red);font-weight:700;">필수 (50,000원~)</div></div>
+</div>
+<div class="wb"><strong>⚠ 스탠드+매립배관 조합 주의:</strong> 스탠드 에어컨에 매립배관 연결 시 주문 모델명이 달라짐. 특수 환경에서 별도 자재 설치비 발생 가능.</div>
+</div>
+<div style="margin-top:16px;">
+<div class="official-section"><div class="official-section-title">🔎 LG 공식 이미지 — 일반배관 / 매립배관 비교</div><div class="official-group"><div class="official-group-title">일반배관 — 배관이 외부로 노출되고 벽면 타공이 필요한 형태</div><div class="official-desc-grid"><div class="official-desc-card"><img alt="LG전자 일반배관 설치 예시" loading="lazy" src="https://www.lge.co.kr/kr/story/user-guide/images/air-conditioners-install-guide/wall-aircon01-pc.png"/><div class="official-desc-body"><div class="official-desc-title">일반배관 설치 예시</div><div class="official-desc-text">배관이 벽 밖으로 노출되는 형태로, 벽면 타공 후 배관 커버로 마감하는 가장 일반적인 설치 방식입니다.</div></div></div><div class="official-desc-card"><img alt="LG전자 일반배관 상세 예시" loading="lazy" src="https://www.lge.co.kr/kr/story/user-guide/images/air-conditioners-install-guide/general-plumbing02-pc.png"/><div class="official-desc-body"><div class="official-desc-title">일반배관 상세 예시</div><div class="official-desc-text">실내기와 실외기를 연결하는 배관이 외부로 지나가는 구조입니다. 배관 길이와 현장 환경에 따라 추가배관 비용이 발생할 수 있습니다.</div></div></div></div></div><div class="official-group"><div class="official-group-title">매립배관 — 배관이 벽체 내부에 매립되어 있는 형태</div><div class="official-desc-grid"><div class="official-desc-card"><img alt="LG전자 매립배관 설치 예시" loading="lazy" src="https://www.lge.co.kr/kr/story/user-guide/images/air-conditioners-install-guide/wall-aircon02-pc.png"/><div class="official-desc-body"><div class="official-desc-title">매립배관 설치 예시</div><div class="official-desc-text">배관이 벽 속에 미리 매립되어 외부로 보이지 않는 형태입니다. 신축 아파트나 선매립 구조에서 많이 확인됩니다.</div></div></div><div class="official-desc-card"><img alt="LG전자 매립배관 상세 예시" loading="lazy" src="https://www.lge.co.kr/kr/story/user-guide/images/air-conditioners-install-guide/landfill-plumbing02-pc.png"/><div class="official-desc-body"><div class="official-desc-title">매립배관 상세 예시</div><div class="official-desc-text">선매립 배관은 설치 전 누설 테스트와 세척이 필요한 경우가 많습니다. 모델명과 자재비가 일반배관과 달라질 수 있어 사전 확인이 중요합니다.</div></div></div></div></div><div class="official-note">이미지와 설명이 함께 보이도록 LG전자 공식 설치가이드 이미지를 카드형으로 재구성했습니다.</div></div>
+</div>
+</div>
+<!-- ===== TAB 3: 추가설치비용 ===== -->
+<div class="tab-panel" id="tab-cost">
+<div class="card">
+<div class="ch"><div class="ci">💰</div><h2>LG전자 추가설치비용 안내</h2></div>
+<div class="tw">
+<table class="ct">
+<thead><tr>
+<th style="text-align:left;min-width:90px;">구분</th>
+<th style="min-width:130px;">상세 항목</th>
+<th style="min-width:90px;">단가(원)</th>
+<th style="min-width:55px;">단위</th>
+<th style="min-width:200px;">설명 / 비고</th>
+</tr></thead>
+<tbody>
+<tr class="cat"><td colspan="5">📦 추가배관 (냉매 포함)</td></tr>
+<tr><td rowspan="2" style="font-weight:600;">동배관</td><td class="sub">32.5㎡ (10평) 이하</td><td class="ca">19,000</td><td class="cu">M당</td><td class="cn">기본 배관 외 연장 시. 배관 규격: 9.52mm, 12.7mm, 15.88mm 등</td></tr>
+<tr><td class="sub">89.1㎡ (27평) 이하</td><td class="ca">22,000</td><td class="cu">M당</td><td class="cn">일반배관 환경 설치 시 최소 5m 발생. 추가 배관단가에 냉매 포함</td></tr>
+<tr><td rowspan="2" style="font-weight:600;">알루미늄배관</td><td class="sub">32.5㎡ (10평) 이하</td><td class="ca">13,000</td><td class="cu">M당</td><td class="cn">재설치 시 배관 별개 작업비 부담 가능</td></tr>
+<tr><td class="sub">89.1㎡ (27평) 이하</td><td class="ca">15,000</td><td class="cu">M당</td><td class="cn"></td></tr>
+<tr><td style="font-weight:600;">주름관</td><td class="sub">가정용</td><td class="ca">25,000</td><td class="cu">M당</td><td class="cn">배관 연결 몸체 굵기로 실내·일반 배관 사이에 사용</td></tr>
+<tr class="cat"><td colspan="5">🔗 용접 / 전원선 / 드레인</td></tr>
+<tr><td style="font-weight:600;">용접 (기본배관 포함)</td><td class="sub">가정용</td><td class="ca">15,000</td><td class="cu">개당</td><td class="cn">배관 연결 용접비 (냉매 일정량 포함)</td></tr>
+<tr><td style="font-weight:600;">전원선 (일반배관)</td><td class="sub">2in1 이상 해당</td><td class="ca">13,000</td><td class="cu">실내기 대당</td><td class="cn">2in1 배관 기준 이상 사용 시</td></tr>
+<tr><td style="font-weight:600;">전원선 (매립배관)</td><td class="sub">2in1 이상 해당</td><td class="ca">6,000</td><td class="cu">실내기 대당</td><td class="cn">2in1 매립배관으로 연결 시</td></tr>
+<tr><td style="font-weight:600;">드레인 호스</td><td class="sub">—</td><td class="ca">4,000</td><td class="cu">M당</td><td class="cn">기본 제공 호스 외 추가 시</td></tr>
+<tr class="cat"><td colspan="5">🏗 실외기 앵글 / 받침대</td></tr>
+<tr><td rowspan="2" style="font-weight:600;">알루미늄 앵글</td><td class="sub">실외기 80cm 미만</td><td class="ca">120,000</td><td class="cu">대당</td><td class="cn" rowspan="2">고등급 알루미늄 소재 앵글</td></tr>
+<tr><td class="sub">실외기 80cm 이상</td><td class="ca">140,000</td><td class="cu">대당</td></tr>
+<tr><td style="font-weight:600;">하이번 앵글</td><td class="sub">실외기 80cm 미만</td><td class="ca">180,000</td><td class="cu">대당</td><td class="cn">ISO 9001 인증 협력사 자재</td></tr>
+<tr><td style="font-weight:600;">실외기 받침대 (1단)</td><td class="sub">10평 이하</td><td class="ca">60,000</td><td class="cu">대당</td><td class="cn">실외기 설치 높이 확보</td></tr>
+<tr><td style="font-weight:600;">실외기 받침대 (2단)</td><td class="sub">27평 이하</td><td class="ca">160,000</td><td class="cu">대당</td><td class="cn">3단 별도 협의</td></tr>
+<tr><td style="font-weight:600;">에어가이드/바람막이</td><td class="sub">—</td><td class="ca">40,000</td><td class="cu">—</td><td class="cn">좁은 공간 설치 시 통풍 확보 장치</td></tr>
+<tr class="cat"><td colspan="5">💧 배수 펌프 / 매립배관 세척</td></tr>
+<tr><td style="font-weight:600;">배수 펌프 4~6m</td><td class="sub">호스 6m 포함</td><td class="ca">70,000</td><td class="cu">개당</td><td class="cn" rowspan="4">자연 배수 어려운 경우 설치</td></tr>
+<tr><td style="font-weight:600;">배수 펌프 8m</td><td class="sub">호스 8m 포함</td><td class="ca">100,000</td><td class="cu">개당</td></tr>
+<tr><td style="font-weight:600;">배수 펌프 10~12m</td><td class="sub">호스 12m 포함</td><td class="ca">130,000</td><td class="cu">개당</td></tr>
+<tr><td style="font-weight:600;">배수 펌프 무소음 6~10m</td><td class="sub">호스 10m 포함</td><td class="ca">150,000</td><td class="cu">개당</td></tr>
+<tr><td style="font-weight:600;">배수 펌프 호스 추가</td><td class="sub">—</td><td class="ca">2,000</td><td class="cu">M당</td><td class="cn">기본 호스 초과 시</td></tr>
+<tr><td style="font-weight:600;">배관 누설 테스트 (1대)</td><td class="sub">—</td><td class="ca">50,000</td><td class="cu">실내기 대당</td><td class="cn" rowspan="2">매립배관 상태 점검</td></tr>
+<tr><td style="font-weight:600;">배관 누설 테스트 (2대)</td><td class="sub">—</td><td class="ca">90,000</td><td class="cu">2대 기준</td></tr>
+<tr><td style="font-weight:600;">매립배관 세척 (1대)</td><td class="sub">—</td><td class="ca">50,000</td><td class="cu">실내기 대당</td><td class="cn" rowspan="2">이물질·수분·오일 제거. 선매립 배관 필수 작업</td></tr>
+<tr><td style="font-weight:600;">매립배관 세척 (2대)</td><td class="sub">—</td><td class="ca">90,000</td><td class="cu">2대 기준</td></tr>
+<tr><td style="font-weight:600;">가스 주입 (R-32)</td><td class="sub">—</td><td class="ca">18,000~</td><td class="cu">실외기 기준</td><td class="cn">냉매 가스 부족 시 보충. 냉매별 가격 상이</td></tr>
+<tr class="cat"><td colspan="5">🔧 일반배관 환경 / 외부작업 / 철거</td></tr>
+<tr><td style="font-weight:600;">이지 찔기</td><td class="sub">—</td><td class="ca">6,000</td><td class="cu">개당</td><td class="cn">신제품 기본 4개 동봉, 배관 연장 시 추가</td></tr>
+<tr><td style="font-weight:600;">이지찔기 재몰대</td><td class="sub">—</td><td class="ca">8,000</td><td class="cu">개당</td><td class="cn">조인트로 배관 연결 시</td></tr>
+<tr><td style="font-weight:600;">미조립 설치</td><td class="sub">—</td><td class="ca">30,000</td><td class="cu">—</td><td class="cn">미완성 앵글 조립 후 설치</td></tr>
+<tr><td style="font-weight:600;">고객 보유 앵글 설치</td><td class="sub">조립 설치</td><td class="ca">70,000</td><td class="cu">—</td><td class="cn">고객 보유 자재 설치 업체 필요 시</td></tr>
+<tr><td style="font-weight:600;">난간대/외벽 작업</td><td class="sub">지면 2M 이상</td><td class="ca">30,000</td><td class="cu">—</td><td class="cn">외벽에 실외기 전원 설치 작업비</td></tr>
+<tr><td style="font-weight:600;">벽걸이 철거</td><td class="sub">사용 중 제품</td><td class="ca">20,000</td><td class="cu">개당</td><td class="cn">동일 위치·동일 제품 교체 조건 충족 시 무상 가능</td></tr>
+<tr><td style="font-weight:600;">스탠드 철거</td><td class="sub">사용 중 제품</td><td class="ca">40,000</td><td class="cu">개당</td><td class="cn"></td></tr>
+<tr class="cat"><td colspan="5">🔌 고용량 멀티탭 / 타공비 / 사다리차</td></tr>
+<tr><td style="font-weight:600;">고용량 멀티탭 (2구/2M)</td><td class="sub">—</td><td class="ca">20,000</td><td class="cu">개당</td><td class="cn">고용량 필요 시</td></tr>
+<tr><td style="font-weight:600;">타공비</td><td class="sub">—</td><td class="ca">10,000</td><td class="cu">회당</td><td class="cn">단품 2회 무상 / 2in1 3회 무상 / 초과 10,000원/회 / 내력벽 불가</td></tr>
+<tr><td style="font-weight:600;">일반 사다리차</td><td class="sub">신규 구매 고객</td><td class="ca" style="color:var(--ok);">무상 1회</td><td class="cu">—</td><td class="cn">엘리베이터 사용 불가한 2층 이상 건물</td></tr>
+<tr><td style="font-weight:600;">스카이카</td><td class="sub">신규 구매 고객</td><td class="ca">140,000~</td><td class="cu">시간당</td><td class="cn">1시간: 140,000 / 1.5시간: 200,000 / 2시간: 260,000 / 18m 초과 별도 협의</td></tr>
+</tbody>
+</table>
+</div>
+<div class="fn"><ul>
+<li>위 추가 설치비는 설치 환경에 따라 별도 발생할 수 있으며 VAT 포함 금액입니다</li>
+<li>전기공사 전문업체 필요 시: 전기공사법 제8장 42조 — 무자격자 시공 시 처벌 대상</li>
+</ul></div>
+</div>
+</div>
+<!-- ===== TAB 4: 케어서비스 ===== -->
+<div class="tab-panel" id="tab-care">
+<div class="card">
+<div class="ch"><div class="ci">🧹</div><h2>LG전자 에어컨 케어서비스</h2></div>
+<div class="ib">에어컨 속 먼지와 습기, 필터 교체와 분해 세척으로 바람이 지나는 길을 주기적으로 깨끗하게 관리하세요.</div>
+<!-- 공통 서비스 -->
+<div class="sl" style="margin-top:20px;">프리미엄 &amp; 라이트 플러스 — 공통 제공 서비스</div>
+<div class="cs-grid">
+<div class="cs-card">
+<h4>🧽 위생케어</h4>
+<p>분해 세척 또는 기본 세척 케어 시 피톤치드, UV 케어 등을 통해 위생적으로 관리</p>
+<p style="margin-top:5px;font-size:11.5px;color:#777;">프리미엄: 스팀·UV·피톤치드 36개월마다<br/>라이트플러스: 스팀 36개월, UV·피톤치드 12개월마다</p>
+</div>
+<div class="cs-card">
+<h4>🔄 필터 세척 및 교체</h4>
+<p>에어컨을 깨끗하게 사용할 수 있도록 공기청정 필터 교체 및 세척 서비스 제공</p>
+<p style="margin-top:5px;font-size:11.5px;color:#777;">공기청정 기능이 있는 모델에 한하여, <strong>12개월에 1회</strong> 교체</p>
+</div>
+<div class="cs-card" style="border:2px solid #A50034;background:#FFF5F7;">
+<h4 style="color:#A50034;">🚚 무상 철거 및 재설치</h4>
+<p>이사할 때도 변경없이, 제품 무상 철거/재설치 서비스 제공</p>
+<p style="margin-top:5px;font-size:11.5px;color:#777;"><strong>계약기간 내 1회 무상</strong> 철거/재설치<br/>재설치 시 배관 재사용 불가 → 배관 비용 고객 부담<br/>제품 설치 환경에 따라 추가 비용 발생 가능(사다리차 등)</p>
+</div>
+<div class="cs-card">
+<h4>🔍 제품 성능 점검 및 무상 A/S</h4>
+<p>고장 걱정없이 안심하고 오래 사용할 수 있도록 1년에 한 번 설치환경·냉방·배수 등 성능 점검</p>
+<p style="margin-top:5px;font-size:11.5px;color:#777;">가전 구독 고객 전 제품 고장 시 무상 A/S 제공<br/>(고객 과실로 인한 고장은 제외)</p>
+</div>
+</div>
+<!-- 세척 방식 비교 -->
+<div class="sl" style="margin-top:18px;">프리미엄 vs 라이트 플러스 — 36개월마다 세척 방식 차이</div>
+<div class="care-diff">
+<div class="cd-hdr">
+<div style="text-align:left;padding-left:13px;">항목</div>
+<div style="color:#FFB3C1;">🔴 프리미엄</div>
+<div style="color:#90CAF9;">🔵 라이트 플러스</div>
+</div>
+<div class="cd-row" style="background:#FFF5F7;border-left:4px solid #A50034;">
+<div style="font-weight:800;color:#A50034;">세척 방식</div>
+<div style="color:#A50034;font-weight:800;">분해 세척</div>
+<div style="color:#1565C0;font-weight:800;">기본 세척</div>
+</div>
+<div class="cd-row">
+<div>세척 범위</div>
+<div>제품 전체 분리 후 열교환기·냉방팬까지 세척</div>
+<div>전면 커버 분리 후 케어서비스</div>
+</div>
+<div class="cd-row">
+<div>주기</div>
+<div>36개월마다</div>
+<div>36개월마다</div>
+</div>
+<div class="cd-row">
+<div>권장 대상</div>
+<div>오염이 심하거나 깊은 세척 원하는 고객</div>
+<div>기본 관리로 충분한 일반 고객</div>
+</div>
+</div>
+<div class="wb" style="margin-top:12px;"><strong>⚠ 참고:</strong> 방문 관리는 사전 안내드리며, 고객 요청에 의해 협의된 일정으로 변경 가능. 에어컨 가전 구독 및 케어십 상품에 따라 적용 서비스가 상이합니다.</div>
+</div>
+<div style="margin-top:16px;">
+<div class="official-section"><div class="official-section-title">🧹 LG 공식 이미지 — 에어컨 케어서비스</div><div class="official-care-split"><div class="official-group"><div class="official-group-title">에어컨 스탠드형</div><div class="official-desc-grid care-grid"><div class="official-desc-card"><img alt="LG전자 에어컨 케어서비스 스탠드형 분해 케어" loading="lazy" src="https://www.lge.co.kr/kr/main/caresolution/renew_2206/assets/rmsf2022/s-common/img_air-conditioner01.jpg"/><div class="official-desc-body"><div class="official-desc-title">분해 케어</div><div class="official-desc-text">프리미엄 서비스에 제공되며, 제품을 분리한 뒤 내부 팬과 열교환기까지 더 깊게 케어하는 방식입니다.</div></div></div><div class="official-desc-card"><img alt="LG전자 에어컨 케어서비스 스탠드형 기본 세척" loading="lazy" src="https://www.lge.co.kr/kr/main/caresolution/renew_2206/assets/rmsf2022/s-common/img_air-conditioner02.jpg"/><div class="official-desc-body"><div class="official-desc-title">기본 세척</div><div class="official-desc-text">라이트 플러스 서비스에 제공되며, 전면 커버 분리 후 기본 케어서비스를 진행하는 방식입니다.</div></div></div><div class="official-desc-card"><img alt="LG전자 에어컨 케어서비스 스탠드형 위생 케어" loading="lazy" src="https://www.lge.co.kr/kr/main/caresolution/renew_2206/assets/rmsf2025/img_air-conditioners_stand_251126_03.jpg"/><div class="official-desc-body"><div class="official-desc-title">위생 케어</div><div class="official-desc-text">분해 세척 또는 기본 세척 시 스팀·UV·피톤치드 케어를 통해 냄새와 위생 상태를 함께 관리합니다.</div></div></div><div class="official-desc-card"><img alt="LG전자 에어컨 케어서비스 스탠드형 필터 세척 및 교체" loading="lazy" src="https://www.lge.co.kr/kr/main/caresolution/renew_2206/assets/rmsf2025/img_air-conditioners_stand_251126_04.jpg"/><div class="official-desc-body"><div class="official-desc-title">필터 세척 및 교체</div><div class="official-desc-text">공기청정 기능이 있는 모델은 공기청정 필터 세척 및 교체가 제공되며, 일반적으로 12개월에 1회 기준으로 안내됩니다.</div></div></div><div class="official-desc-card"><img alt="LG전자 에어컨 케어서비스 스탠드형 제품 성능 점검 및 무상 A/S" loading="lazy" src="https://www.lge.co.kr/kr/main/caresolution/renew_2206/assets/rmsf2025/img_air-conditioners_stand_251126_06.jpg"/><div class="official-desc-body"><div class="official-desc-title">제품 성능 점검 및 무상 A/S</div><div class="official-desc-text">냉방·배수·설치환경 등 제품 성능을 점검하고, 고장 발생 시 무상 A/S를 제공합니다. 단, 고객 과실은 제외됩니다.</div></div></div></div><div class="official-mini-note">※ 스탠드형 공통 서비스인 무상 철거 및 재설치는 상단 공통 서비스 카드 내용을 함께 참고해주세요.</div></div><div class="official-group"><div class="official-group-title">에어컨 벽걸이형</div><div class="official-desc-grid care-grid"><div class="official-desc-card"><img alt="LG전자 에어컨 케어서비스 벽걸이형 분해 케어" loading="lazy" src="https://www.lge.co.kr/kr/main/caresolution/renew_2206/assets/rmsf2023/s-common/img_air-conditioner_wash_01.jpg"/><div class="official-desc-body"><div class="official-desc-title">분해 케어</div><div class="official-desc-text">프리미엄 서비스에 제공되며, 제품 분리 후 내부까지 세척하는 방식으로 깊은 관리가 필요한 고객에게 적합합니다.</div></div></div><div class="official-desc-card"><img alt="LG전자 에어컨 케어서비스 벽걸이형 기본 세척" loading="lazy" src="https://www.lge.co.kr/kr/main/caresolution/renew_2206/assets/rmsf2023/s-common/img_air-conditioner_wash_02.jpg"/><div class="official-desc-body"><div class="official-desc-title">기본 세척</div><div class="official-desc-text">라이트 플러스 서비스에 제공되며, 전면 커버 분리 후 기본 케어서비스를 진행하는 방식입니다.</div></div></div><div class="official-desc-card"><img alt="LG전자 에어컨 케어서비스 벽걸이형 위생 케어" loading="lazy" src="https://www.lge.co.kr/kr/main/caresolution/renew_2206/assets/rmsf2023/s-common/img_air-conditioner_wash_03.jpg"/><div class="official-desc-body"><div class="official-desc-title">위생 케어</div><div class="official-desc-text">스팀·UV 케어 등으로 위생 관리를 지원하며, 냄새와 먼지 관리에 도움이 되는 공통 서비스입니다.</div></div></div><div class="official-desc-card"><img alt="LG전자 에어컨 케어서비스 벽걸이형 공기청정 필터 교체 및 공기질 센서 점검" loading="lazy" src="https://www.lge.co.kr/kr/main/caresolution/renew_2206/assets/rmsf2023/s-common/img_air-conditioner_wash_04.jpg"/><div class="official-desc-body"><div class="official-desc-title">공기청정 필터 교체 및 공기질 센서 점검</div><div class="official-desc-text">공기청정 기능이 있는 모델은 필터 교체와 함께 공기질 센서 점검이 진행되어 보다 안정적인 사용이 가능합니다.</div></div></div><div class="official-desc-card"><img alt="LG전자 에어컨 케어서비스 벽걸이형 무상 A/S" loading="lazy" src="https://www.lge.co.kr/kr/main/caresolution/renew_2206/assets/rmsf2023/s-common/img_air-conditioner_wash_05.jpg"/><div class="official-desc-body"><div class="official-desc-title">무상 A/S</div><div class="official-desc-text">정기 점검과 함께 제품 이상 시 무상 A/S를 제공합니다. 단, 고객 과실로 인한 고장은 제외될 수 있습니다.</div></div></div></div><div class="official-mini-note">※ 벽걸이형도 상품 구성에 따라 무상 철거 및 재설치, 방문 일정 협의 여부가 달라질 수 있으니 상담 시 함께 안내해주세요.</div></div></div><div class="official-note">이미지와 설명이 함께 보이도록 LG전자 공식 케어서비스 이미지를 카드형으로 재구성했습니다.</div></div>
+</div>
+</div>
+<!-- ===== TAB 5: 상담 팁 ===== -->
+<div class="tab-panel" id="tab-tip">
+<!-- 설치비 핵심 안내 -->
+<div class="card" style="border:2px solid var(--lg-red);">
+<div class="ch"><div class="ci">💡</div><h2>설치비 관련 문의 시 핵심 안내</h2></div>
+<div class="three-col">
+<div class="ob" style="margin-top:0;"><strong>✅ 기본 설치비는 무상</strong><br/>기본 배관 범위 및 타공 횟수 내에서는 별도 설치비 없이 무상으로 진행됩니다.</div>
+<div class="ib" style="margin-top:0;"><strong>📍 LG전자 본사 공식 기사 방문</strong><br/>LG전자 본사 공식 기사님이 직접 방문하므로 불필요한 추가 설치비를 요구하지 않습니다.</div>
+<div class="wb" style="margin-top:0;"><strong>⚠ 현장 상황에 따라 추가비 발생 가능</strong><br/>배관 연장, 고층 외벽 작업, 매립배관 세척 등 현장 환경에 따라 추가 설치비가 생길 수 있습니다.</div>
+</div>
+<div style="background:#FFF3CD;border:2px solid #FFC107;border-radius:10px;padding:14px 16px;margin-top:13px;">
+<div style="font-size:13.5px;font-weight:900;color:#856404;margin-bottom:8px;">🏠 일반 아파트 설치 시 설치비 안내 기준</div>
+<div style="font-size:13px;color:#333;line-height:1.7;">
+<strong style="color:#A50034;">일반적으로 기본설치비 + 약 15~20만원 사이의 추가 설치비가 발생합니다.</strong><br/>
+    → 정확한 금액은 기사님 현장 확인 후 결정되며, 사전에 확답은 금지입니다.<br/><br/>
+<strong>📌 상담 시 핵심 포인트:</strong><br/>
+    ① 일반 설치비 외에 <u>추가 설치비가 나올 가능성이 높다</u>는 점만 미리 안내<br/>
+    ② 정확한 추가 요금은 <strong>추가 설치비용 자료 참고</strong> (확답 절대 금지!)
+  </div>
+</div>
+<div class="sb" style="margin-top:13px;">
+<div class="sl2">💬 설치비 문의 시 권장 스크립트</div>
+  "고객님, 기본 배관 범위 및 타공 내에서는 별도 설치비가 없습니다. 또한 LG전자 본사 공식 기사님이 직접 방문하시기 때문에 불필요한 추가 비용은 요구드리지 않습니다. 다만 일반 아파트의 경우 설치 현장 상황에 따라 15~20만원 내외의 추가 설치비가 발생하는 경우가 많습니다. 기사님이 현장 도착 후 반드시 설치 전에 먼저 안내드리고, 동의하신 후에만 작업이 진행됩니다."
+</div>
+</div>
+<!-- Q&A -->
+<div class="card">
+<div class="ch"><div class="ci">❓</div><h2>자주 묻는 질문 &amp; 상담 스크립트</h2></div>
+<!-- Q1 가정/사업장 에어컨 vs 냉난방기 -->
+<div class="qa">
+<div class="qq">에어컨이 필요한가요? 냉난방기가 필요한가요?</div>
+<div style="background:#fff0f0;border-left:4px solid #A50034;border-radius:8px;padding:13px 15px;margin-bottom:10px;">
+<strong style="font-size:13.5px;color:#A50034;">⚠️ 가정 설치 vs 사업장 설치 — 반드시 구분하여 상담!</strong>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+<div class="ob" style="margin:0;">
+<strong>🏠 가정 설치</strong><br/>
+    일반적으로 <strong>에어컨(냉방 전용)</strong>만 희망하는 경우가 대부분<br/>
+    → 보일러가 있기 때문에 난방은 별도로 필요 없는 경우가 많음<br/><br/>
+<em style="font-size:12px;color:#555;">단, 고객이 난방 기능도 원하는 경우 냉난방기 안내</em>
+</div>
+<div class="wb" style="margin:0;">
+<strong>🏢 사업장 설치</strong><br/>
+<strong style="color:#A50034;">에어컨인지 냉난방기인지 반드시 확인!</strong><br/>
+    → 사업장은 보일러가 없는 경우가 많아 난방 기능 필요 여부 먼저 파악<br/><br/>
+<em style="font-size:12px;color:#555;">냉방만 필요 → 에어컨 / 난방도 필요 → 냉난방기(사계절)</em>
+</div>
+</div>
+<div class="sb">
+<div class="sl2">💬 사업장 고객 상담 확인 스크립트</div>
+  "사업장에 설치하시는 경우, 에어컨(여름 냉방 전용)이 필요하신 건가요, 아니면 겨울 난방까지 가능한 냉난방기가 필요하신 건가요? 사업장은 별도 보일러가 없는 경우가 많아 꼭 한 번 확인드립니다."
+</div>
+<div class="rb" style="margin-top:10px;">
+<strong>🔁 접수 후 최종 재확인 필수:</strong><br/>
+  "고객님, 최종 확인 드리겠습니다. 오늘 접수해드린 제품은 <strong>냉방만 되는 에어컨 / 냉난방기</strong>로 상담 진행 도와드렸습니다. 이 부분 맞으신가요?"
+</div>
+</div>
+<!-- Q2 에너지 등급 -->
+<div class="qa">
+<div class="qq">에너지 소비효율 등급, 1등급이 무조건 좋은 건가요?</div>
+<div class="e-bars">
+<div class="e-row"><div class="eg" style="background:#1A7C24;">1</div><div class="eb" style="background:#1A7C24;width:100%;">최고 효율 — 전기료 가장 적게 나옴</div><span class="er er-n">렌탈료 ↑↑</span></div>
+<div class="e-row"><div class="eg" style="background:#4CAF50;">2</div><div class="eb" style="background:#4CAF50;width:82%;">높은 효율</div><span class="er er-n">렌탈료 ↑</span></div>
+<div class="e-row"><div class="eg" style="background:#FF9800;">3</div><div class="eb" style="background:#FF9800;width:66%;">보통 효율</div><span class="er er-g">렌탈료 적절 ✓</span></div>
+<div class="e-row"><div class="eg" style="background:#F44336;">4</div><div class="eb" style="background:#F44336;width:50%;">낮은 효율</div><span class="er er-n">비추천</span></div>
+<div class="e-row"><div class="eg" style="background:#B71C1C;">5</div><div class="eb" style="background:#B71C1C;width:36%;">최저 효율</div><span class="er er-n">비추천</span></div>
+</div>
+<div class="wb" style="margin-top:11px;"><strong>💡 알아두면 좋은 사실:</strong> 수년 전 1등급 기준이 현재 3등급 수준에 해당합니다. 에너지 효율 기준이 꾸준히 상향되어 왔기 때문에 3등급도 충분히 좋은 제품입니다.</div>
+<div class="sb">
+<div class="sl2">💬 스크립트</div>
+  "고객님, 1등급이 전기료가 가장 적게 나오는 건 맞지만, 렌탈료가 상대적으로 많이 높습니다. 그리고 사실 몇 년 전 1등급 기준이 지금의 3등급 수준이기도 해서, 3등급 제품도 충분히 효율이 좋습니다. 3등급 제품을 사용하시면서 절감되는 전기료와 렌탈료 차이를 비교해보면, 상당히 오랫동안 사용하셔야 1등급 제품의 렌탈료 차이를 전기료 절감으로 상쇄할 수 있거든요. 굳이 1등급을 고집하실 필요는 없으시고, 3등급 제품도 일상 사용에 충분히 만족스러우실 거예요."
+</div>
+</div>
+<!-- Q3 배관 -->
+<div class="qa">
+<div class="qq">매립배관과 일반배관 차이가 뭔가요?</div>
+<div class="ib"><strong>일반배관:</strong> 배관이 벽 밖에 보이는 형태. 커버로 마감 처리. | <strong>매립배관:</strong> 배관이 벽 속에 미리 매립. 신축 아파트에 많음.<br/>→ 기본 설치 안내 탭의 사진과 비교표 참고</div>
+<div class="sb"><div class="sl2">💬 스크립트</div>"일반배관은 배관이 벽 바깥쪽으로 나와 있는 형태이고, 매립배관은 배관이 벽 안에 미리 들어가 있는 형태입니다. 신축 아파트는 대부분 매립배관이 설치되어 있고, 구축 아파트나 빌라는 일반배관인 경우가 많습니다. 배관 종류에 따라 주문 모델명이 달라질 수 있어 기사님 현장 확인 후 안내드립니다."</div>
+</div>
+<!-- Q4 배관소재 -->
+<div class="qa">
+<div class="qq">배관이 구리인지 알루미늄인지, 구리로 바꾸면 비용이 얼마나 드나요?</div>
+<div class="ib">
+<strong>알루미늄 배관:</strong> 기본 제공 소재. 가볍고 설치 용이. 가격 저렴.<br/>
+<strong>구리(동) 배관:</strong> 열전도율 높아 냉방효율 우수. 내구성·내식성 강함. 가격 높음.<br/>
+  업그레이드 비용: 동배관 10평 이하 M당 19,000원 / 27평 이하 M당 22,000원
+</div>
+</div>
+<!-- Q5 2IN1 실내기 2대 -->
+<div class="qa">
+<div class="qq">실외기 1개로 실내기 2대(스탠드 + 벽걸이) 설치가 되나요?</div>
+<div class="ib">
+<strong>✅ 2IN1 제품으로 가능합니다!</strong><br/>
+  실외기 1대에 실내기 2대(스탠드 1대 + 벽걸이 1대)를 연결하는 구조의 <strong>2IN1 제품</strong>을 추천드립니다.<br/><br/>
+<strong>⚠ 2IN1이 아닌 경우:</strong> 실내기 1대당 실외기 1개씩 별도로 설치해야 합니다.
+</div>
+<div class="sb">
+<div class="sl2">💬 스크립트</div>
+  "실외기 1개로 실내기 2대를 연결하시려면 2IN1 제품을 선택하시면 됩니다. 2IN1은 스탠드 1대 + 벽걸이 1대를 실외기 1개로 운영하는 구조입니다. 만약 일반 제품으로 진행하시면 실내기 1대당 실외기 1개씩 총 2개의 실외기가 필요하게 됩니다."
+</div>
+</div>
+<!-- Q5-2 멀티 실외기 -->
+<div class="qa">
+<div class="qq">실외기 1대로 실내기 3~5대 이상 연결이 가능한가요? (사업장)</div>
+<div class="wb">
+<strong>⚠ 렌탈로는 진행 불가!</strong><br/>
+  사업장에 실외기 1대로 3대 이상의 실내기를 연결하는 <strong>멀티형 시스템</strong>은 전문 업체의 시공과 공급사 연계가 필요합니다.<br/>
+  → 렌탈 상품으로는 진행이 불가합니다. 전문 업체 또는 상부점으로 연계 안내 바랍니다.
+</div>
+<div class="sb">
+<div class="sl2">💬 스크립트</div>
+  "사업장에 실외기 1대로 3대 이상 연결하시는 멀티형 시스템은 전문 업체 시공과 별도 공급사 연계가 필요한 사항으로 렌탈 상품으로는 진행이 어렵습니다. 해당 내용은 상부점이나 전문 업체를 통해 별도 안내 받으시도록 도와드리겠습니다."
+</div>
+</div>
+<!-- Q5-3 LG 무상수거 장점 -->
+<div class="qa">
+<div class="qq">기존에 에어컨이 있는데 해체비가 발생하나요?</div>
+<div class="ob">
+<strong>✅ LG전자 제품의 경우 — 무상수거 요청 시 해체비 없음!</strong><br/>
+  LG전자 기존 에어컨을 무상수거 요청하시는 경우에는 해체비가 발생하지 않습니다.<br/><br/>
+<strong style="color:#A50034;">🎁 LG전자의 장점:</strong> 삼성, 캐리어 등 타 브랜드 제품은 해체비가 별도로 발생하지만, LG전자 기존 제품은 무상수거 요청 시 해체비 없이 진행 가능!
+</div>
+<div class="sb">
+<div class="sl2">💬 스크립트</div>
+  "고객님, LG전자 기존 에어컨이 있으신 경우 무상수거 요청을 하시면 해체비가 따로 발생하지 않습니다. 삼성이나 캐리어 제품은 해체비가 별도로 발생하는데, LG전자 제품은 그런 부분에서 유리하십니다."
+</div>
+</div>
+<!-- Q5-4 사전 답사 가능 제품 -->
+<div class="qa">
+<div class="qq">설치 전에 사전 답사가 가능한가요?</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+<div class="ob" style="margin:0;">
+<strong>✅ 사전 답사 가능 제품</strong><br/>
+    · 냉난방기(사계절 제품)<br/>
+    · 아트쿨<br/>
+    · 시그니처 에어컨
+  </div>
+<div class="wb" style="margin:0;">
+<strong>❌ 사전 답사 불가 제품</strong><br/>
+    · 소형 벽걸이 에어컨<br/>
+    · 보급형 스탠드 에어컨
+  </div>
+</div>
+<div class="sb" style="margin-top:10px;">
+<div class="sl2">💬 스크립트</div>
+  "사전 답사는 냉난방기(사계절), 아트쿨, 시그니처 에어컨 제품에 한해 가능합니다. 소형 벽걸이나 보급형 스탠드 제품은 사전 답사가 어렵습니다."
+</div>
+</div>
+<!-- Q5-5 냉난방기 난방 사용 시 배수 -->
+<div class="qa">
+<div class="qq">냉난방기(사계절) 난방 사용 시 실외기에서 물이 나온다고 하는데요?</div>
+<div class="wb">
+<strong>⚠ 냉난방기 난방 모드 사용 시 실외기 배수 발생!</strong><br/>
+  냉난방기(사계절 제품)의 난방 기능을 사용하면 실외기에서 물이 발생하며, 이 물이 <strong>배수구를 통해 바로 배수되는 구조</strong>로 설치되어야 합니다.<br/><br/>
+  → 배수 구조 판단이 어려운 경우 <strong>상부점 문의 후 진행 요청</strong>
+</div>
+<div class="sb">
+<div class="sl2">💬 스크립트</div>
+  "냉난방기 제품은 겨울 난방 기능을 사용하시면 실외기에서 물이 발생합니다. 이 물이 바로 배수구로 빠져나갈 수 있는 구조인지 미리 확인이 필요한데, 정확한 판단이 어려우신 경우 상부점에 문의하시면 안내 도와드리겠습니다."
+</div>
+</div>
+<!-- Q6 삼상/단상 -->
+<div class="qa">
+<div class="qq">삼상 전기와 단상 전기 차이가 뭔가요?</div>
+<div class="ph-box">
+<div class="ph-side" style="border-right:1px solid var(--border);">
+<h4>⚡ 단상 (1φ)</h4>
+<ul><li>일반 가정용 전기 (220V)</li><li>전선 2가닥 (L선 + N선)</li><li>아파트·빌라·주택 대부분</li><li>소형~중형 에어컨 사용</li></ul>
+</div>
+<div class="ph-div">VS</div>
+<div class="ph-side" style="border-left:1px solid var(--border);">
+<h4>⚡⚡ 삼상 (3φ)</h4>
+<ul><li>산업용·업무용 전기 (380V)</li><li>전선 3~4가닥 (R,S,T + N)</li><li>상가·공장·사무실</li><li>대형 에어컨·업소용</li></ul>
+</div>
+</div>
+<div class="sb"><div class="sl2">💬 확인 방법 안내</div>"분전함(두꺼비집)에서 굵은 전선 수가 2가닥이면 단상, 3~4가닥이면 삼상입니다. 또는 한국전력 고객센터(☎123)에 문의하시거나 전기요금 고지서의 '계약종별' 항목을 확인하시면 됩니다."</div>
+</div>
+<!-- Q7 이전설치 -->
+<div class="qa">
+<div class="qq">이전설치비에 해체비가 포함되어 있나요?</div>
+<div class="wb"><strong>⚠ 이전설치비 ≠ 해체비 포함!</strong> 해체비가 별도로 발생할 수 있습니다.<br/>벽걸이 철거: 20,000원 / 스탠드 철거: 40,000원<br/>이전 시 기존 배관 재사용 불가 → 새 배관 비용 추가<br/>동일 위치·동일 제품 교체 조건 충족 시 무상 철거 가능</div>
+<div class="sb"><div class="sl2">💬 스크립트</div>"이전설치 시에는 기존 배관을 재사용하기 어려워 새 배관 비용이 별도 발생하고, 기존 제품 철거비도 추가될 수 있습니다. 정확한 금액은 기사님이 현장 확인 후 고객님께 먼저 안내드리고, 동의하신 후에만 작업이 진행됩니다."</div>
+</div>
+</div>
+<!-- LG FAQ 링크 -->
+<div class="card" style="background:linear-gradient(135deg,#A50034,#7B0026);color:white;border:none;text-align:center;">
+<div style="font-size:16px;font-weight:900;margin-bottom:6px;">📋 LG전자 공식 FAQ 바로가기</div>
+<p style="font-size:12.5px;opacity:.85;margin-bottom:15px;">위에서 해결되지 않는 문의는 LG전자 공식 고객지원 페이지를 참고하세요</p>
+<a href="https://www.lge.co.kr/sch?keyword=LG%EC%A0%84%EC%9E%90+%EC%97%90%EC%96%B4%EC%BB%A8&amp;tab=support" style="display:inline-block;background:white;color:var(--lg-red);font-weight:800;padding:10px 26px;border-radius:22px;text-decoration:none;font-size:13px;" target="_blank">
+  🔗 LG전자 에어컨 고객지원 FAQ 열기
+</a>
+</div>
+</div>
+</div>
+<script>
+function T(name,el){
+  document.querySelectorAll(".tab-panel").forEach(p=>p.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  document.getElementById("tab-"+name).classList.add("active");
+  el.classList.add("active");
+}
+</script>
+</body>
+</html>
